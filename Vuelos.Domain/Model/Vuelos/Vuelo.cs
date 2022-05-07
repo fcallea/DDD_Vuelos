@@ -5,51 +5,73 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vuelos.Domain.Event;
 using Vuelos.Domain.Model.Vuelos;
 
-namespace Vuelos.Domain.Model.Personales
+namespace Vuelos.Domain.Model.Vuelos
 {
     public class Vuelo : AggregateRoot<Guid>
     {
-        public Guid DestinoId { get; private set; }
+        public Guid IdLugarOrigen { get; private set; }
+        public Guid IdLugarDestino { get; private set; }
+        public Guid IdItinerario { get; private set; }
+        public Guid IdAeronave { get; private set; }
         public string NroVuelo { get; private set; }
-        public DateTime Fecha { get; private set; }
-        public TimeSpan HoraPartida { get; private set; }
-        public TimeSpan HoraLlegada { get; private set; }
+        public DateTime FechaHoraPartida { get; private set; }
+        public DateTime FechaHoraLlegada { get; private set; }
         public string TipoVuelo { get; private set; }
-        public Guid AeronaveEnPistaId { get; private set; }
+        public decimal MillasVuelo { get; private set; }
+        public decimal TiempoVuelo { get; private set; }
+        public int StockAsientos { get; private set; }
 
-        private readonly ICollection<Tripulante> _tripulante;
-        public IReadOnlyCollection<Tripulante> Tripulantes
+        public Guid IdTripulacion { get; private set; }
+
+        private readonly ICollection<TripulanteDeVuelo> _Tripulacion;
+        public IReadOnlyCollection<TripulanteDeVuelo> Tripulantes
         {   get
             {
-                return new ReadOnlyCollection<Tripulante>(_tripulante.ToList());
+                return new ReadOnlyCollection<TripulanteDeVuelo>(_Tripulacion.ToList());
             }
         }
 
-        private readonly ICollection<Asiento> _asiento;
-        public IReadOnlyCollection<Asiento> Asientos
+        private readonly ICollection<ReservaDeVuelo> _Reserva;
+        public IReadOnlyCollection<ReservaDeVuelo> Reservas
         {   get
             {
-                return new ReadOnlyCollection<Asiento>(_asiento.ToList());
+                return new ReadOnlyCollection<ReservaDeVuelo>(_Reserva.ToList());
             }
         }
-
 
         private Vuelo() { }
 
-        internal Vuelo(Guid DestinoId, string NroVuelo, DateTime Fecha, TimeSpan HoraPartida, TimeSpan HoraLlegada, string TipoVuelo, Guid AeronaveEnPistaId)
+        internal Vuelo(
+          Guid IdLugarOrigen, Guid IdLugarDestino
+        , Guid IdItinerario, Guid IdAeronave, string NroVuelo
+        , Guid IdTripulacion
+        , DateTime FechaHoraPartida, DateTime FechaHoraLlegada
+        , String TipoVuelo
+        , decimal MillasVuelo, decimal TiempoVuelo)
         {
             Id = Guid.NewGuid();
-            this.DestinoId = DestinoId;
+            this.IdLugarOrigen = IdLugarOrigen;
+            this.IdLugarDestino = IdLugarDestino;
+            this.IdItinerario = IdItinerario;
+            this.IdAeronave = IdAeronave;
             this.NroVuelo = NroVuelo;
-            this.Fecha = Fecha;
-            this.HoraPartida = HoraPartida;
-            this.HoraLlegada = HoraLlegada;
+            this.IdTripulacion = IdTripulacion;
+            this.FechaHoraPartida = FechaHoraPartida;
+            this.FechaHoraLlegada = FechaHoraLlegada;
             this.TipoVuelo = TipoVuelo;
-            this.AeronaveEnPistaId = AeronaveEnPistaId;
-            _tripulante = new List<Tripulante>();
-            _asiento = new List<Asiento>();
+            this.MillasVuelo = MillasVuelo;
+            this.TiempoVuelo = TiempoVuelo;
+            _Tripulacion = new List<TripulanteDeVuelo>();
+            _Reserva = new List<ReservaDeVuelo>();
+        }
+
+        public void ConsolidarVuelo()
+        {
+            var evento = new VueloCreado(Id, NroVuelo, FechaHoraPartida, FechaHoraLlegada, MillasVuelo, TiempoVuelo);
+            AddDomainEvent(evento);
         }
     }
 }

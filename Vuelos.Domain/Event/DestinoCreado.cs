@@ -9,15 +9,15 @@ namespace Vuelos.Domain.Event
 {
     public record DestinoCreado : DomainEvent
     {
-        public Guid DestinoId { get; }
+        public Guid IdLugarDestino { get; }
         public Guid AereopuertoIdOrigen { get; }
         public Guid AereopuertoIdDestino { get; }
         public decimal DistanciaMillas { get; }
         public TimeSpan TiempoMinutos { get; }
 
-        public DestinoCreado(Guid DestinoId, Guid AereopuertoIdOrigen, Guid AereopuertoIdDestino, decimal DistanciaMillas, TimeSpan TiempoMinutos) : base(DateTime.Now)
+        public DestinoCreado(Guid IdLugarDestino, Guid AereopuertoIdOrigen, Guid AereopuertoIdDestino, decimal DistanciaMillas, TimeSpan TiempoMinutos) : base(DateTime.Now)
         {
-            this.DestinoId = DestinoId;
+            this.IdLugarDestino = IdLugarDestino;
             this.AereopuertoIdOrigen = AereopuertoIdOrigen;
             this.AereopuertoIdDestino = AereopuertoIdDestino;
             this.DistanciaMillas = DistanciaMillas;

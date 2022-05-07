@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShareKernel.Core
 {
@@ -31,7 +28,7 @@ namespace ShareKernel.Core
 
         protected void CheckRule(IBussinessRule rule)
         {
-            if(rule is null)
+            if (rule is null)
             {
                 throw new ArgumentException("Rule cannot be null");
             }

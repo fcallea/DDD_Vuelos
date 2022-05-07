@@ -9,22 +9,18 @@ namespace Vuelos.Application.Dto.Vuelo
 {
     public class VueloDto
     {
-        public Guid Id { get; set; }
-        public Guid DestinoId { get; set; }
-        public string NroVuelo { get; set; }
-        public DateTime Fecha { get; set; }
-        public TimeSpan HoraPartida { get; set; }
-        public TimeSpan HoraLlegada { get; set; }
+        public Guid IdLugarDestino { get; set; }
+        public Guid IdItinerario { get; set; }
+        public Guid IdTripulacion { get; set; }
+        public DateTime FechaHoraPartida { get; set; }
+        public DateTime FechaHoraLlegada { get; set; }
         public string TipoVuelo { get; set; }
-        public Guid AeronaveEnPistaId { get; set; }
-
-        public ICollection<Tripulante> Tripulantes { get; set; }
-        public ICollection<Asiento> Asientos { get; set; }
+        public decimal MillasVuelo { get; set; }
+        public ICollection<TripulanteDto> Tripulantes { get; set; }
 
         public VueloDto()
         {
-            Tripulantes = new List<Tripulante>();
-            Asientos = new List<Asiento>();
+            Tripulantes = new List<TripulanteDto>();
         }
     }
 }

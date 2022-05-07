@@ -1,32 +1,38 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Vuelos.Domain.Model.Personales;
+using Vuelos.Domain.Model.Vuelos;
 using Vuelos.Domain.Repositories;
+using Vuelos.Infraestructure.EF.Contexts;
 
 namespace Vuelos.Infraestructure.EF.Repository
 {
     public class VueloRepository : IVueloRepository
     {
-        public Task CreateAsync(Vuelo obj)
-        {
-            Console.WriteLine($"Insertando el vuelo { obj.NroVuelo }");
+        public readonly DbSet<Vuelo> _vuelos;
 
-            return Task.CompletedTask;
+        public VueloRepository(WriteDbContext context)
+        {
+            _vuelos = context.Vuelo;
         }
 
-        public Task<Vuelo> FindByIdAsync(Guid id)
+        public async Task CreateAsync(Vuelo obj)
         {
-            Console.WriteLine($"Retornando el vuelo { id }");
-
-            return null;
+            await _vuelos.AddAsync(obj);
         }
 
+        public async Task<Vuelo> FindByIdAsync(Guid id)
+        {
+            return await _vuelos.Include("_vuelos")
+                    .SingleAsync(x => x.Id == id);
+        }
+        
         public Task UpdateAsync(Vuelo obj)
         {
-            Console.WriteLine($"Actualizando el vuelo { obj.NroVuelo }");
+            _vuelos.Update(obj);
 
             return Task.CompletedTask;
         }

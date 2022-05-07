@@ -9,25 +9,23 @@ namespace Vuelos.Domain.Event
 {
     public record VueloCreado : DomainEvent
     {
-        public Guid VueloId { get; }
-        public Guid DestinoId { get; }
+        public Guid IdVuelo { get; }
         public string NroVuelo { get; }
-        public DateTime Fecha { get; }
-        public TimeSpan HoraPartida { get; }
-        public TimeSpan HoraLlegada { get; }
-        public string TipoVuelo { get; }
-        public Guid AeronaveEnPistaId { get; }
+        public DateTime FechaHoraPartida { get; }
+        public DateTime FechaHoraLlegada { get; }        
+        public decimal MillasVuelo { get; }
+        public decimal TiempoVuelo { get; }
 
-        public VueloCreado(Guid vueloId, Guid destinoId, string nroVuelo, DateTime fecha, TimeSpan horaPartida, TimeSpan horaLlegada, string tipoVuelo, Guid aeronaveEnPistaId) : base(DateTime.Now)
+        public VueloCreado(Guid IdVuelo, string NroVuelo
+        , DateTime FechaHoraPartida, DateTime FechaHoraLlegada
+        , decimal MillasVuelo, decimal TiempoVuelo) : base(DateTime.Now)
         {
-            VueloId = vueloId;
-            DestinoId = destinoId;
-            NroVuelo = nroVuelo;
-            Fecha = fecha;
-            HoraPartida = horaPartida;
-            HoraLlegada = horaLlegada;
-            TipoVuelo = tipoVuelo;  
-            AeronaveEnPistaId = aeronaveEnPistaId;  
+            this.IdVuelo = IdVuelo; 
+            this.NroVuelo = NroVuelo;
+            this.FechaHoraPartida = FechaHoraPartida;
+            this.FechaHoraLlegada = FechaHoraLlegada;
+            this.MillasVuelo = MillasVuelo;
+            this.TiempoVuelo = TiempoVuelo;
         }
     }
 }

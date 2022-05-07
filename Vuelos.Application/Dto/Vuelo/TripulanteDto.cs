@@ -8,8 +8,12 @@ namespace Vuelos.Application.Dto.Vuelo
 {
     public class TripulanteDto
     {
-        public Guid VueloId { get; set; }
-        public string Usuario { get; set; }
-        public string Cargo { get; set; }
+        public Guid IdTripulante { get; set; }
+        public Guid IdCargo { get; set; }
+
+        public TripulanteDto()
+        {
+            ;
+        }
     }
 }

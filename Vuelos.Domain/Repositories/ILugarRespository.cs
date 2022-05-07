@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Vuelos.Domain.Model.Personales;
+using Vuelos.Domain.Model.Lugares;
 
 namespace Vuelos.Domain.Repositories
 {
-    public interface IPersonalRepository : IRepository<Personal, Guid>
+    public interface ILugarRespository : IRepository<Lugar, Guid>
     {
-        Task UpdateAsync(Personal obj);
+        Task UpdateAsync(Destino obj);
 
-        Task RemoveAsync(Personal obj);
+        Task RemoveAsync(Destino obj);
     }
 }

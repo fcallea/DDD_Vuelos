@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Vuelos.Domain.Model.Destinos;
+using Vuelos.Domain.Model.Reservas;
 
 namespace Vuelos.Domain.Repositories
 {
-    public interface IDestinoRespository : IRepository<Destino, Guid>
+    public interface ReservaRepository : IRepository<Reserva, Guid>
     {
-        Task UpdateAsync(Destino obj);
+        Task UpdateAsync(Reserva obj);
 
-        Task RemoveAsync(Destino obj);
+        Task RemoveAsync(Reserva obj);
     }
 }

@@ -8,6 +8,12 @@ namespace Vuelos.Application.Services
 {
     public interface IVueloService
     {
-        Task<string> GenerarNroVueloAsync();
+        Task<Guid> CrearLugarOrigenAsync();
+        Task<Guid> CrearLugarDestinoAsync();
+        Task<DateTime> CrearFechaHoraPartidaAsync();
+        Task<DateTime> CrearFechaHoraLlegadaAsync();
+        Task<string> CrearTipoVueloAsync();
+        Task<decimal> CrearMillasVueloAsync();
+        Task<decimal> CrearTiempoVueloAsync();
     }
 }
