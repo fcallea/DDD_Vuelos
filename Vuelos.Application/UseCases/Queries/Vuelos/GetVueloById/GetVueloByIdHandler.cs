@@ -29,26 +29,14 @@ namespace Vuelos.Application.UseCases.Queries.Vuelos.GetVueloById
             try
             {
         
-         Vuelo objVuelo = await _vueloRepository.FindByIdAsync(request.Id);
+                 Vuelo objVuelo = await _vueloRepository.FindByIdAsync(request.Id);
 
-         result = new VueloDto()
-         {
-             //Id = objVuelo.Id,
-             //NroVuelo = objVuelo.NroVuelo,
-             //Total = objVuelo.Total
-         };
-                /*
-         foreach (var item in objVuelo.Tripulantes)
-         {
-             result.Tripulantes.Add(new TripulanteVueloDto()
-             {
-                 //Cantidad = item.Cantidad,
-                 //Instrucciones = item.Instrucciones,
-                 //Precio = item.Precio,
-                 PersonalId = item.PersonalId
-             });
-         }
-             */
+                 result = new VueloDto()
+                 {
+                     Id = objVuelo.Id,
+                     NroVuelo = objVuelo.NroVuelo,
+                 };
+
             }
             catch (Exception ex)
             {

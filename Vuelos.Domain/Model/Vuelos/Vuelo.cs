@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Vuelos.Domain.Event;
 using Vuelos.Domain.Model.Vuelos;
+using Vuelos.Domain.ValueObjects;
 
 namespace Vuelos.Domain.Model.Vuelos
 {
@@ -16,10 +17,10 @@ namespace Vuelos.Domain.Model.Vuelos
         public Guid IdLugarDestino { get; private set; }
         public Guid IdItinerario { get; private set; }
         public Guid IdAeronave { get; private set; }
-        public string NroVuelo { get; private set; }
-        public DateTime FechaHoraPartida { get; private set; }
-        public DateTime FechaHoraLlegada { get; private set; }
-        public string TipoVuelo { get; private set; }
+        public NroVueloValue NroVuelo { get; private set; }
+        public FechaValue FechaHoraPartida { get; private set; }
+        public FechaValue FechaHoraLlegada { get; private set; }
+        public TipoVueloValue TipoVuelo { get; private set; }
         public decimal MillasVuelo { get; private set; }
         public decimal TiempoVuelo { get; private set; }
         public int StockAsientos { get; private set; }

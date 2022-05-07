@@ -30,11 +30,11 @@ namespace Vuelos.Infraestructure.EF.Contexts
 
             var vueloConfig = new VueloReadConfig();
             modelBuilder.ApplyConfiguration<AeropuertoReadModel>(vueloConfig);
-            //modelBuilder.ApplyConfiguration<PistaReadModel>(vueloConfig);
-            //modelBuilder.ApplyConfiguration<AeronaveReadModel>(vueloConfig);
-            //modelBuilder.ApplyConfiguration<ItinerarioReadModel>(vueloConfig);
-            //modelBuilder.ApplyConfiguration<LugarReadModel>(vueloConfig);
-            //modelBuilder.ApplyConfiguration<VueloReadModel>(vueloConfig);
+            modelBuilder.ApplyConfiguration<PistaReadModel>(vueloConfig);
+            modelBuilder.ApplyConfiguration<AeronaveReadModel>(vueloConfig);
+            modelBuilder.ApplyConfiguration<ItinerarioReadModel>(vueloConfig);
+            modelBuilder.ApplyConfiguration<LugarReadModel>(vueloConfig);
+            modelBuilder.ApplyConfiguration<VueloReadModel>(vueloConfig);
 
             modelBuilder.Ignore<DomainEvent>();
             modelBuilder.Ignore<VueloCreado>();

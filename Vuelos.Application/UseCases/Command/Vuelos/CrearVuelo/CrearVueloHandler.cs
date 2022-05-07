@@ -67,20 +67,13 @@ namespace Vuelos.Application.UseCases.Command.Vuelos.CrearVuelo
                 //string tipoVuelo = request.Vuelo.TipoVuelo;
                 //decimal millasVuelo = request.Vuelo.MillasVuelo;
 
-
-
-        Vuelo objVuelo = _vueloFactory.Create(idLugarOrigen, idLugarDestino
+                Vuelo objVuelo = _vueloFactory.Create(idLugarOrigen, idLugarDestino
                 , idItinerario, idAeronave, nroVuelo
                 , idTripulacion
                 , fechaHoraPartida, fechaHoraLlegada
                 , tipoVuelo
                 , millasVuelo, tiempoVuelo);
-                /*
-                foreach (var item in request.Tripulantes)
-                {
-                   // objVuelo.AgregarItem(item.ProductoId, item.Cantidad, item.Precio, item.Instrucciones);
-                }
-                */
+
                 objVuelo.ConsolidarVuelo();
 
                 await _vueloRepository.CreateAsync(objVuelo);

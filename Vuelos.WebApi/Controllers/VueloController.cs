@@ -4,13 +4,14 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 using Vuelos.Application.Dto.Vuelo;
+using Vuelos.Application.UseCases.Command.Vuelos.AsignarItinerario;
 using Vuelos.Application.UseCases.Command.Vuelos.CrearVuelo;
 using Vuelos.Application.UseCases.Queries.Vuelos.GetVueloById;
 
 namespace Vuelos.WebApi.Controllers
 {
     [ApiController]
-    [Route("/api/[controller]")]
+    [Route("/api/MS_Vuelo")]
     public class VueloController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -20,6 +21,21 @@ namespace Vuelos.WebApi.Controllers
             _mediator = mediator;
         }
 
+
+        [Route("AsignaItinerario")]
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] AsignarItinerarioCommand command)
+        {
+            Guid id = await _mediator.Send(command);
+
+            if (id == Guid.Empty)
+                return BadRequest();
+
+            return Ok(id);
+        }
+
+
+        [Route("CreaVuelo")]
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CrearVueloCommand command)
         {
@@ -31,8 +47,7 @@ namespace Vuelos.WebApi.Controllers
             return Ok(id);
         }
 
-
-        [Route("{id:guid}")]
+        [Route("BuscaVuelo/{id:guid}")]
         [HttpGet]
         public async Task<IActionResult> GetVueloById([FromRoute] GetVueloByIdQuery command)
         {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Vuelos.Domain.Model.Vuelos;
+using Vuelos.Domain.ValueObjects;
 
 namespace Vuelos.Application.Dto.Vuelo
 {
@@ -17,6 +18,8 @@ namespace Vuelos.Application.Dto.Vuelo
         public string TipoVuelo { get; set; }
         public decimal MillasVuelo { get; set; }
         public ICollection<TripulanteDto> Tripulantes { get; set; }
+        public Guid Id { get; internal set; }
+        public NroVueloValue NroVuelo { get; internal set; }
 
         public VueloDto()
         {

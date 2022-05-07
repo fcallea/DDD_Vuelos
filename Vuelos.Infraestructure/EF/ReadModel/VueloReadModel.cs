@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vuelos.Domain.ValueObjects;
 
 namespace Vuelos.Infraestructure.EF.ReadModel
 {
@@ -14,8 +15,8 @@ namespace Vuelos.Infraestructure.EF.ReadModel
         //public Guid IdLugarDestino { get; set; }
         public ItinerarioReadModel Itinerario { get; set; }
         //public Guid IdItinerario { get; set; }
-        public DateTime FechaHoraPartida { get; set; }
-        public DateTime FechaHoraLlegada { get; set; }
+        public FechaValue FechaHoraPartida { get; set; }
+        public FechaValue FechaHoraLlegada { get; set; }
         public string TipoVuelo { get; set; }
         public decimal MillasVuelo { get; set; }
         public decimal TiempoVuelo { get; set; }
