@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vuelos.Application.Services
 {
-    internal class AeropuertoService : IAeropuertoService
+    public class AeropuertoService : IAeropuertoService
     {
         public Task<string> GenerarNroVueloAsync() => Task.FromResult("VUELO-XXX");
     }
