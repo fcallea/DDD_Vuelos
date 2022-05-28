@@ -19,4 +19,11 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Vuelos.Application\Vuelos.Application.csproj" />
+    <ProjectReference Include="..\Vuelos.Domain\Vuelos.Domain.csproj" />
+    <ProjectReference Include="..\Vuelos.Infraestructure\Vuelos.Infraestructure.csproj" />
+    <ProjectReference Include="..\Vuelos.WebApi\Vuelos.WebApi.csproj" />
+  </ItemGroup>
+
 </Project>

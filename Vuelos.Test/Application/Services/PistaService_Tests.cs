@@ -11,7 +11,7 @@ namespace Vuelos.Test.Application.Services
     public class PistaService_Tests
     {
         [Theory]
-        [InlineData("V01", true)]
+        [InlineData("V01", false)]
         [InlineData("1X123", false)]
         [InlineData("234234", false)]
         [InlineData("AAAA", false)]

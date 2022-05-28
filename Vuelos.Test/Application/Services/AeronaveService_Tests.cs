@@ -11,23 +11,23 @@ namespace Vuelos.Test.Application.Services
     public class AeronaveService_Tests
     {
         [Theory]
-        [InlineData("0000-0000-0000-0000", true)]
+        [InlineData("0000-0000-0000-0000", false)]
         [InlineData("1234-456-456", false)]
         [InlineData("xxxxxxx", false)]
         [InlineData("7dfsfsdf89", false)]
         [InlineData("", false)]
-        public async void AeronaveService_CheckValidData(Guid expectedIdAeronave, bool isEqual)
+        public async void AeronaveService_CheckValidData(string StrExpectedIdAeronave, bool isEqual)
         {
-            var aeronaveService = new AeronaveService();
-            Guid idAeronave = await aeronaveService.ObtenerIdAeronaveAsync();
+            Guid expectedIdAeronave;
+            bool isValid = Guid.TryParse(StrExpectedIdAeronave, out expectedIdAeronave);
             if (isEqual)
-            {   
-                Assert.Equal(expectedIdAeronave, idAeronave);
+            {
+                Assert.True(isValid);
             }
             else
             {
-                Assert.NotEqual(expectedIdAeronave, idAeronave);
-            }
+                Assert.False(isValid);
+            }     
         }
     }
 }
