@@ -8,6 +8,6 @@ namespace Vuelos.Application.Services
 {
     public class AeropuertoService : IAeropuertoService
     {
-        public Task<string> GenerarNroVueloAsync() => Task.FromResult("VUELO-XXX");
+        public Task<int> GenerarNroVueloAsync() => Task.FromResult(123);
     }
 }

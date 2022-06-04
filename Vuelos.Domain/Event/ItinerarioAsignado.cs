@@ -12,13 +12,13 @@ namespace Vuelos.Domain.Event
         public Guid IdItinerario { get; }
         public Guid IdPista { get; }
         public Guid IdAeronave { get; }        
-        public string NroVuelo { get; }
+        public int NroVuelo { get; }
         public DateTime FechaHoraDesde { get; }
         public DateTime FechaHoraHasta { get; }
 
 
         public ItinerarioAsignado(Guid IdItinerario, Guid IdPista
-        , Guid IdAeronave, string NroVuelo
+        , Guid IdAeronave, int NroVuelo
         , DateTime FechaHoraDesde, DateTime FechaHoraHasta) : base(DateTime.Now)
         {
             this.IdItinerario = IdItinerario;

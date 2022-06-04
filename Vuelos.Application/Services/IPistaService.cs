@@ -8,7 +8,7 @@ namespace Vuelos.Application.Services
 {
     public interface IPistaService
     {
-        Task<Guid> ObtenerIdPistaAsync();
-        Task<string> AsignarNroVueloAsync();
+        Task<int> AsignarNroVueloAsync();
+        Task<Guid> GetIdPistaAsync();
     }
 }

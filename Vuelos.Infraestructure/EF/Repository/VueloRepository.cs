@@ -12,6 +12,24 @@ namespace Vuelos.Infraestructure.EF.Repository
 {
     public class VueloRepository : IVueloRepository
     {
+        public Task CreateAsync(Vuelo obj)
+        {
+            Console.WriteLine($"INSERTANDO EL VUELO {obj.NroVuelo}");
+            return Task.CompletedTask;
+        }
+
+        public Task<Vuelo> FindByIdAsync(Guid id)
+        {
+            Console.WriteLine($"BUSCANDO POR EL VUELO {id}");
+            return null;
+        }
+
+        public Task UpdateAsync(Vuelo obj)
+        {
+            Console.WriteLine($"ACTUALIZANDO EL VUELO {obj.NroVuelo}");
+            return Task.CompletedTask;
+        }
+        /*
         public readonly DbSet<Vuelo> _vuelos;
 
         public VueloRepository(WriteDbContext context)
@@ -36,5 +54,6 @@ namespace Vuelos.Infraestructure.EF.Repository
 
             return Task.CompletedTask;
         }
+        */
     }
 }

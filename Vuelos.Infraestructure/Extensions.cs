@@ -22,9 +22,10 @@ namespace Vuelos.Infraestructure
         public static IServiceCollection AddInfrastructure(this IServiceCollection services,
             IConfiguration configuration)
         {
+            
             services.AddApplication();
             services.AddMediatR(Assembly.GetExecutingAssembly());
-
+            /*
             var connectionString =
                 configuration.GetConnectionString("VueloDbConnectionString");
 
@@ -32,15 +33,21 @@ namespace Vuelos.Infraestructure
                 context.UseSqlServer(connectionString));
             services.AddDbContext<WriteDbContext>(context =>
                 context.UseSqlServer(connectionString));
-
+            */
+            services.AddScoped<IItinerarioRepository, ItinerarioRepository>();
             services.AddScoped<IVueloRepository, VueloRepository>();
-            //services.AddScoped<IProductoRepository, ProductoRepository>();
-            //services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            
+            /*
+            services.AddScoped<IVueloRepository, VueloRepository>();
+            services.AddScoped<IItinerarioRepository, ItinerarioRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            */
             //TODO: Eliminar despues. Solo para proposito de pruebas
             //services.AddSingleton<MemoryDatabase>();
             //services.AddScoped<IVueloRepository, MemoryVueloRepository>();
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            
 
 
             return services;

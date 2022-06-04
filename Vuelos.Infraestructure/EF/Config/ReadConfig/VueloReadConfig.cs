@@ -9,14 +9,16 @@ using Vuelos.Infraestructure.EF.ReadModel;
 
 namespace Vuelos.Infraestructure.EF.Config.ReadConfig
 {
-    public class VueloReadConfig : 
-          IEntityTypeConfiguration<AeropuertoReadModel>
-        , IEntityTypeConfiguration<PistaReadModel>
-        , IEntityTypeConfiguration<AeronaveReadModel>
-        , IEntityTypeConfiguration<ItinerarioReadModel>
-        , IEntityTypeConfiguration<LugarReadModel>
-        , IEntityTypeConfiguration<VueloReadModel>
+    public class VueloReadConfig :
+          IEntityTypeConfiguration<ItinerarioReadModel>
+        //, IEntityTypeConfiguration<AeropuertoReadModel>
+        //, IEntityTypeConfiguration<PistaReadModel>
+        //, IEntityTypeConfiguration<AeronaveReadModel>
+        //, IEntityTypeConfiguration<LugarReadModel>
+        //, IEntityTypeConfiguration<VueloReadModel>
     {
+
+        /*
         public void Configure(EntityTypeBuilder<AeropuertoReadModel> builder)
         {
             builder.ToTable("Aeropuerto");
@@ -71,9 +73,10 @@ namespace Vuelos.Infraestructure.EF.Config.ReadConfig
                 .HasColumnType("decimal")
                 .HasPrecision(12, 2);
 
-            builder.HasMany(x => x.Itinerario).WithOne(x => x.Aeronave);
+            builder.HasMany(x => x.Itinerario)
+                .WithOne(x => x.Aeronave);
         }
-
+        */
 
         public void Configure(EntityTypeBuilder<ItinerarioReadModel> builder)
         {
@@ -81,9 +84,8 @@ namespace Vuelos.Infraestructure.EF.Config.ReadConfig
             builder.HasKey(x => x.IdItinerario);
 
             builder.Property(x => x.NroVuelo)
-                .HasMaxLength(20)
                 .HasColumnName("nroVuelo");
-
+            /*
             builder.Property(x => x.FechaHoraDesde)
                 .HasColumnName("fechaHoraDesde")    
                 .HasColumnType("datetime");
@@ -91,10 +93,10 @@ namespace Vuelos.Infraestructure.EF.Config.ReadConfig
             builder.Property(x => x.FechaHoraHasta)
                 .HasColumnName("fechaHoraHasta")
                 .HasColumnType("datetime");
+            */
 
-
-            builder.HasOne(s => s.Vuelo)
-            .WithOne(x => x.Itinerario);
+            //builder.HasOne(s => s.Vuelo)
+            //.WithOne(x => x.Itinerario);
 
             /*
             builder.Property(x => x.FechaHoraHasta)
@@ -105,7 +107,7 @@ namespace Vuelos.Infraestructure.EF.Config.ReadConfig
             */
         }
 
-
+        /*
         public void Configure(EntityTypeBuilder<VueloReadModel> builder)
         {
             builder.ToTable("Vuelo");
@@ -156,6 +158,6 @@ namespace Vuelos.Infraestructure.EF.Config.ReadConfig
             builder.HasMany(x => x.LugarVuelo)
                 .WithOne(x => x.LugarDestino);
         }
-
+        */
     }
 }

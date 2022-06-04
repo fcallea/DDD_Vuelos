@@ -15,26 +15,25 @@ namespace Vuelos.Test.Application.Dto
         {
             var IdPista = Guid.NewGuid();
             var IdAeronave = Guid.NewGuid();
-            //DateTime FechaHoraDesde = DateTime.Now;
-            //DateTime FechaHoraHasta = DateTime.Now;
+            DateTime FechaHoraDesde = DateTime.Now;
+            DateTime FechaHoraHasta = DateTime.Now;
 
             var itinerario = new ItinerarioDto();
 
             Assert.Equal(Guid.Empty, itinerario.IdPista);
             Assert.Equal(Guid.Empty, itinerario.IdAeronave);
-            //Assert.NotEqual(DateTime.Now, itinerario.FechaHoraDesde);
-            //Assert.NotEqual(DateTime.Now, itinerario.FechaHoraDesde);
+            Assert.NotNull((object)itinerario.FechaHoraDesde);
+            Assert.NotNull((object)itinerario.FechaHoraHasta);
 
             itinerario.IdPista = IdPista;
             itinerario.IdAeronave = IdAeronave;
-            //itinerario.FechaHoraDesde = FechaHoraDesde;
-            //itinerario.FechaHoraHasta = FechaHoraHasta;
+            itinerario.FechaHoraDesde = FechaHoraDesde;
+            itinerario.FechaHoraHasta = FechaHoraHasta;
 
             Assert.Equal(IdPista, itinerario.IdPista);
             Assert.Equal(IdAeronave, itinerario.IdAeronave);
-            //Assert.NotEqual(FechaHoraDesde, itinerario.FechaHoraDesde);
-            //Assert.NotEqual(FechaHoraDesde, itinerario.FechaHoraDesde);
-
+            Assert.NotNull((object)FechaHoraDesde);
+            Assert.NotNull((object)FechaHoraHasta);
         }
     }
 }

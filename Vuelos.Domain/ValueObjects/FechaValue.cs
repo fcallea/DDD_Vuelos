@@ -12,10 +12,12 @@ namespace Vuelos.Domain.ValueObjects
         public DateTime Value { get; }
         public FechaValue(DateTime value)
         {
-            if (value < DateTime.Now)
+            /*
+            if (value == null)
             {
-                throw new BussinessRuleValidationException("La fecha no puede ser a la anterior");
+                throw new BussinessRuleValidationException("La fecha no puede ser null");
             }
+            */
             Value = value;
         }
 
@@ -28,7 +30,5 @@ namespace Vuelos.Domain.ValueObjects
         {
             return new FechaValue(value);
         }
-
-
     }
 }

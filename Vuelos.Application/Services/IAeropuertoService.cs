@@ -8,6 +8,6 @@ namespace Vuelos.Application.Services
 {
     internal interface IAeropuertoService
     {
-        Task<string> GenerarNroVueloAsync();
+        Task<int> GenerarNroVueloAsync();
     }
 }

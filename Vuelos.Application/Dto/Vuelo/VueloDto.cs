@@ -10,6 +10,7 @@ namespace Vuelos.Application.Dto.Vuelo
 {
     public class VueloDto
     {
+        public Guid IdLugarOrigen { get; set; }
         public Guid IdLugarDestino { get; set; }
         public Guid IdItinerario { get; set; }
         public Guid IdTripulacion { get; set; }
@@ -19,7 +20,7 @@ namespace Vuelos.Application.Dto.Vuelo
         public decimal MillasVuelo { get; set; }
         public ICollection<TripulanteDto> Tripulantes { get; set; }
         public Guid Id { get; set; }
-        public NroVueloValue NroVuelo { get; set; }
+        public int  NroVuelo { get; set; }
 
         public VueloDto()
         {

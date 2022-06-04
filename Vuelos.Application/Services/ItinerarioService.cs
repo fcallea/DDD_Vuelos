@@ -11,7 +11,7 @@ namespace Vuelos.Application.Services
         public Task<Guid> ObtenerIdItinerarioAsync() => Task.FromResult(Guid.NewGuid());
         public Task<Guid> ObtenerIdPistaAsync() => Task.FromResult(Guid.NewGuid());
         public Task<Guid> ObtenerIdAeronaveAsync() => Task.FromResult(Guid.NewGuid());
-        public Task<string> ObtenerNroVueloAsync() => Task.FromResult("VUELO-001");
+        public Task<int> ObtenerNroVueloAsync() => Task.FromResult(456);
         public Task<DateTime> ObtenerFechaDesdeAsync() => Task.FromResult(DateTime.Now);
         public Task<DateTime> ObtenerFechaHastaAsync() => Task.FromResult(DateTime.Now);
     }

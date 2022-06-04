@@ -47,6 +47,8 @@ namespace Vuelos.WebApi.Controllers
             return Ok(id);
         }
 
+
+
         [Route("BuscaVuelo/{id:guid}")]
         [HttpGet]
         public async Task<IActionResult> GetVueloById([FromRoute] GetVueloByIdQuery command)

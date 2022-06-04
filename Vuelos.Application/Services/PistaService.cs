@@ -8,7 +8,7 @@ namespace Vuelos.Application.Services
 {
     public class PistaService : IPistaService
     {
-        public Task<string> AsignarNroVueloAsync() => Task.FromResult("V-000001");
-        public Task<Guid> ObtenerIdPistaAsync() => Task.FromResult(Guid.NewGuid());
+        public Task<int> AsignarNroVueloAsync() => Task.FromResult(456);
+        public Task<Guid> GetIdPistaAsync() => Task.FromResult(Guid.NewGuid());
     }
 }

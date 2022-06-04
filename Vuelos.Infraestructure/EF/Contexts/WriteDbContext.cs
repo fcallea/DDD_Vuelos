@@ -16,12 +16,12 @@ namespace Vuelos.Infraestructure.EF.Contexts
 {
     public class WriteDbContext : DbContext
     {
-        public virtual DbSet<Aeropuerto> Aeropuerto { get; set; }
-        public virtual DbSet<Pista> Pista { get; set; }
-        public virtual DbSet<Aeronave> Aeronave { get; set; }
+        //public virtual DbSet<Aeropuerto> Aeropuerto { get; set; }
+        //public virtual DbSet<Pista> Pista { get; set; }
+        //public virtual DbSet<Aeronave> Aeronave { get; set; }
         public virtual DbSet<Itinerario> Itinerario { get; set; }
-        public virtual DbSet<Vuelo> Vuelo { get; set; }
-        public virtual DbSet<Lugar> Lugar { get; set; }
+        //public virtual DbSet<Vuelo> Vuelo { get; set; }
+        //public virtual DbSet<Lugar> Lugar { get; set; }
 
         public WriteDbContext(DbContextOptions<WriteDbContext> options) : base(options)
         {
@@ -32,12 +32,12 @@ namespace Vuelos.Infraestructure.EF.Contexts
             base.OnModelCreating(modelBuilder);
 
             var vueloConfig = new VueloWriteConfig();
-            modelBuilder.ApplyConfiguration<Aeropuerto>(vueloConfig);
-            modelBuilder.ApplyConfiguration<Pista>(vueloConfig);
-            modelBuilder.ApplyConfiguration<Aeronave>(vueloConfig);
+            //modelBuilder.ApplyConfiguration<Aeropuerto>(vueloConfig);
+            //modelBuilder.ApplyConfiguration<Pista>(vueloConfig);
+            //modelBuilder.ApplyConfiguration<Aeronave>(vueloConfig);
             modelBuilder.ApplyConfiguration<Itinerario>(vueloConfig);
-            modelBuilder.ApplyConfiguration<Vuelo>(vueloConfig);
-            modelBuilder.ApplyConfiguration<Lugar>(vueloConfig);
+            //modelBuilder.ApplyConfiguration<Vuelo>(vueloConfig);
+            //modelBuilder.ApplyConfiguration<Lugar>(vueloConfig);
 
             modelBuilder.Ignore<VueloCreado>();
             modelBuilder.Ignore<AeronaveEnPistaAsignado>();

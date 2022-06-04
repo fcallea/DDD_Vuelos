@@ -14,9 +14,11 @@ namespace Vuelos.Infraestructure.EF.ReadModel
         //public Guid IdPista { get; set; }
         public AeronaveReadModel Aeronave { get; set; }
         //public Guid IdAeronave { get; set; }
-        public string NroVuelo { get; set; }
+        public int NroVuelo { get; set; }
+        /*
         public FechaValue FechaHoraDesde { get; set; }
         public FechaValue FechaHoraHasta { get; set; }
         public VueloReadModel Vuelo { get; set; }
+        */
     }
 }

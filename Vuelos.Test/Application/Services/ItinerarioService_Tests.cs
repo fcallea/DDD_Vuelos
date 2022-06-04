@@ -11,23 +11,29 @@ namespace Vuelos.Test.Application.Services
     public class ItinerarioService_Tests
     {
         [Theory]
-        [InlineData("0000-0000-0000-0000", false)]
-        [InlineData("1234-456-456", false)]
-        [InlineData("xxxxxxx", false)]
-        [InlineData("7dfsfsdf89", false)]
-        [InlineData("", false)]
-        public async void ItinerarioService_CheckValidData(string StrExpectedIdItinerario, bool isEqual)
+        [InlineData(0, 99999999, true)]
+        //[InlineData(0, 99999999, true)]
+        //[InlineData(-3, 5 false)]
+        [InlineData(0, -8, false)]
+        [InlineData(-999, 0 , false)]
+        public async void ItinerarioService_CheckValidData(int IniExpectedNroVuelo, int FinExpectedNroVuelo,  bool isEqual)
         {
-            Guid expectedIdItinerario;
-            bool isValid = Guid.TryParse(StrExpectedIdItinerario, out expectedIdItinerario);
-            if (isEqual)
+            var itinerarioService = new ItinerarioService();
+
+            if(isEqual)
             {
-                Assert.True(isValid);
+                Assert.InRange(await itinerarioService.ObtenerNroVueloAsync(), IniExpectedNroVuelo, FinExpectedNroVuelo);
             }
             else
             {
-                Assert.False(isValid);
+                Assert.NotInRange(await itinerarioService.ObtenerNroVueloAsync(), 0, 99999999);
             }
+
+            Assert.NotNull((object)await itinerarioService.ObtenerIdItinerarioAsync());
+            Assert.NotNull((object)await itinerarioService.ObtenerIdPistaAsync());
+            Assert.NotNull((object)await itinerarioService.ObtenerIdAeronaveAsync());
+            Assert.NotNull((object)await itinerarioService.ObtenerFechaDesdeAsync());
+            Assert.NotNull((object)await itinerarioService.ObtenerFechaHastaAsync());
         }
     }
 }

@@ -11,16 +11,15 @@ namespace Vuelos.Test.Application.Services
     public class AeropuertoService_Tests
     {
         [Theory]
-        [InlineData("V01", false)]
-        [InlineData("1X123", false)]
-        [InlineData("234234", false)]
-        [InlineData("AAAA", false)]
-        [InlineData("", false)]
-       // [InlineData(null, false)]
-        public async void AeropuertoService_CheckValidData(string expectedNroVuelo, bool isEqual)
+        [InlineData(123, false)]
+        [InlineData(0000, false)]
+        [InlineData(217, false)]
+        [InlineData(-5, false)]
+        [InlineData(0, false)]
+        public async void AeropuertoService_CheckValidData(int expectedNroVuelo, bool isEqual)
         {
             var aeropuertoService = new AeropuertoService();
-            string nroVuelo = await aeropuertoService.GenerarNroVueloAsync();
+            int nroVuelo = await aeropuertoService.GenerarNroVueloAsync();
             if (isEqual)
             {
                 Assert.Equal(expectedNroVuelo, nroVuelo);

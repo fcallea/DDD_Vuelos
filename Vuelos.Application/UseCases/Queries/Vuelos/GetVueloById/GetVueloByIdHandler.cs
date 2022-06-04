@@ -14,8 +14,8 @@ namespace Vuelos.Application.UseCases.Queries.Vuelos.GetVueloById
 {
     public class GetVueloByIdHandler : IRequestHandler<GetVueloByIdQuery, VueloDto>
     {
-            private readonly IVueloRepository _vueloRepository;
-            private readonly ILogger<GetVueloByIdQuery> _logger;
+        private readonly IVueloRepository _vueloRepository;
+        private readonly ILogger<GetVueloByIdQuery> _logger;
 
         public GetVueloByIdHandler(IVueloRepository vueloRepository, ILogger<GetVueloByIdQuery> logger)
         {

@@ -10,7 +10,7 @@ namespace Vuelos.Domain.Factories
     public interface IVueloFactory
     {
         Vuelo Create(Guid IdLugarOrigen, Guid IdLugarDestino
-            , Guid IdItinerario, Guid IdAeronave, string NroVuelo
+            , Guid IdItinerario, Guid IdAeronave, int NroVuelo
             , Guid IdTripulacion
             , DateTime FechaHoraPartida, DateTime FechaHoraLlegada
             , String TipoVuelo

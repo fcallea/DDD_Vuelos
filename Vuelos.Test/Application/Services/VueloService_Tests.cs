@@ -11,23 +11,39 @@ namespace Vuelos.Test.Application.Services
     public class VueloService_Tests
     {
         [Theory]
-        [InlineData("0000-0000-0000-0000", false)]
-        [InlineData("1234-456-456", false)]
-        [InlineData("xxxxxxx", false)]
-        [InlineData("7dfsfsdf89", false)]
-        [InlineData("", false)]
-        public async void VueloService_Tests_CheckValidData(string STRexpectedIdAeronave, bool isEqual)
+        [InlineData("COMERCIAL", true)]
+        [InlineData("CHARTER", false)]
+        [InlineData("AAAAAAA", false)]
+        [InlineData("DDDDDD", false)]
+        [InlineData("SDFSDFSDF", false)]
+        public async void VueloService_Tests_CheckValidData(string strExpectedTipoVuelo, bool isEqual)
         {
-            Guid expectedIdAeronave;
-            bool isValid = Guid.TryParse(STRexpectedIdAeronave, out expectedIdAeronave);
+            var vueloServicio = new VueloService();
+            String tipoVuelo = await vueloServicio.CrearTipoVueloAsync();
+            String tipoVueloCompare = (String)"COMERCIAL";
+            decimal milllas = await vueloServicio.CrearMillasVueloAsync();
+            decimal tiempovuelo = await vueloServicio.CrearTiempoVueloAsync();
             if (isEqual)
             {
-                Assert.True(isValid);
+                Assert.Equal(tipoVuelo, tipoVueloCompare);
+                Assert.InRange(milllas, 0, 999999999);
+                Assert.InRange(tiempovuelo, 0, 999999999);
             }
             else
             {
-                Assert.False(isValid);
+                Assert.NotEqual(tipoVuelo, tipoVueloCompare);
+                Assert.NotInRange(milllas, 0, 999999999);
+                Assert.NotInRange(tiempovuelo, 0, 999999999);
             }
+
+            var tripulacionService = new TripulacionService();
+            Assert.NotNull((Object)await tripulacionService.CrearTripulacionAsync());
+
+            Assert.NotNull((object)await vueloServicio.CrearLugarOrigenAsync());
+            Assert.NotNull((object)await vueloServicio.CrearLugarDestinoAsync());
+            Assert.NotNull((object)await vueloServicio.CrearFechaHoraPartidaAsync());
+            Assert.NotNull((object)await vueloServicio.CrearFechaHoraLlegadaAsync());
+
         }
     }
 }

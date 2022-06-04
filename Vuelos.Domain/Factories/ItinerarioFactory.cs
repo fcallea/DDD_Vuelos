@@ -9,14 +9,14 @@ namespace Vuelos.Domain.Factories
 {
     public class ItinerarioFactory : IItinerarioFactory
     {
-        public Itinerario Create(Guid IdPista, Guid IdAeronave, string NroVuelo, DateTime FechaHoraDesde, DateTime FechaHoraHasta)
+        public Itinerario Create(Guid IdPista, Guid IdAeronave, int NroVuelo, DateTime FechaHoraDesde, DateTime FechaHoraHasta)
         {
             return new Itinerario(IdPista, IdAeronave, NroVuelo, FechaHoraDesde, FechaHoraHasta);
         }
 
-        public Task CreateAsync(Itinerario objItinerario)
-        {
-            throw new NotImplementedException();
-        }
+        //public Task CreateAsync(Itinerario objItinerario)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

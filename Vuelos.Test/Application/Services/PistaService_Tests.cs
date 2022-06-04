@@ -11,16 +11,15 @@ namespace Vuelos.Test.Application.Services
     public class PistaService_Tests
     {
         [Theory]
-        [InlineData("V01", false)]
-        [InlineData("1X123", false)]
-        [InlineData("234234", false)]
-        [InlineData("AAAA", false)]
-        [InlineData("", false)]
-        [InlineData(null, false)]
-        public async void PistaService_CheckValidData(string expectedNroVuelo, bool isEqual)
+        [InlineData(1, false)]
+        [InlineData(2, false)]
+        [InlineData(3, false)]
+        [InlineData(4, false)]
+        [InlineData(0, false)]
+        public async void PistaService_CheckValidData(int expectedNroVuelo, bool isEqual)
         {
             var pistaService = new PistaService();
-            string nroVuelo = await pistaService.AsignarNroVueloAsync();
+            int nroVuelo = await pistaService.AsignarNroVueloAsync();
             if (isEqual)
             {
                 Assert.Equal(expectedNroVuelo, nroVuelo);
@@ -29,6 +28,8 @@ namespace Vuelos.Test.Application.Services
             {
                 Assert.NotEqual(expectedNroVuelo, nroVuelo);
             }
+            Assert.NotNull((object)await pistaService.GetIdPistaAsync());
+            
         }
     }
 }

@@ -11,7 +11,6 @@ namespace Vuelos.Application.UseCases.Command.Vuelos.AsignarItinerario
     public class AsignarItinerarioCommand : IRequest<Guid>
     {
         public ItinerarioDto Itinerario { get; set; }
-
         private AsignarItinerarioCommand() { }
         public AsignarItinerarioCommand(ItinerarioDto itinerario)
         {

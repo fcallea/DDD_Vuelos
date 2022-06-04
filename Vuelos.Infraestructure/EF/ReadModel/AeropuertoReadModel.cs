@@ -9,10 +9,9 @@ namespace Vuelos.Infraestructure.EF.ReadModel
     public class AeropuertoReadModel
     {
         public Guid IdAeropuerto { get; set; }
-        public LugarReadModel Lugar { get; set; }
-        //public Guid IdLugar { get; set; }
         public int SecuencialVuelo { get; set; }
         public string Nombre { get; set; }
+        public LugarReadModel Lugar { get; set; }
         public ICollection<PistaReadModel> Pista { get; set; }
     }
 }

@@ -11,7 +11,6 @@ namespace Vuelos.Application.UseCases.Command.Vuelos.CrearVuelo
     public class CrearVueloCommand : IRequest<Guid>
     {
         public VueloDto Vuelo { get; set; }
-
         private CrearVueloCommand() { }
         public CrearVueloCommand(VueloDto vuelo)
         {

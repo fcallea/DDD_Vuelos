@@ -10,13 +10,13 @@ namespace Vuelos.Domain.Event
     public record VueloCreado : DomainEvent
     {
         public Guid IdVuelo { get; }
-        public string NroVuelo { get; }
+        public int NroVuelo { get; }
         public DateTime FechaHoraPartida { get; }
         public DateTime FechaHoraLlegada { get; }        
         public decimal MillasVuelo { get; }
         public decimal TiempoVuelo { get; }
 
-        public VueloCreado(Guid IdVuelo, string NroVuelo
+        public VueloCreado(Guid IdVuelo, int NroVuelo
         , DateTime FechaHoraPartida, DateTime FechaHoraLlegada
         , decimal MillasVuelo, decimal TiempoVuelo) : base(DateTime.Now)
         {

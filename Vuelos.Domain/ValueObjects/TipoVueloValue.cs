@@ -11,11 +11,14 @@ namespace Vuelos.Domain.ValueObjects
     {
         public string Value { get; }
         public TipoVueloValue(string value)
-        {            
+        {       
+            /*
             if (Value!="COMERCIAL")
             {
-                throw new BussinessRuleValidationException("Tipo de Vuelo no Permitido");
+                String msg = (String)"Tipo de Vuelo no Permitido";
+                throw new BussinessRuleValidationException(msg);
             }
+            */
             Value = value;
         }
 

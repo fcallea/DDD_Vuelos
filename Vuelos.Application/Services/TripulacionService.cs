@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vuelos.Application.Services
 {
-    internal class TripulacionService : ITripulacionService
+    public class TripulacionService : ITripulacionService
     {
         public Task<Guid> CrearTripulacionAsync() => Task.FromResult(Guid.NewGuid());
     }

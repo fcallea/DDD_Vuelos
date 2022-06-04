@@ -45,9 +45,9 @@ namespace Vuelos.Domain.Model.Vuelos
 
         private Vuelo() { }
 
-        internal Vuelo(
+        public Vuelo(
           Guid IdLugarOrigen, Guid IdLugarDestino
-        , Guid IdItinerario, Guid IdAeronave, string NroVuelo
+        , Guid IdItinerario, Guid IdAeronave, int NroVuelo
         , Guid IdTripulacion
         , DateTime FechaHoraPartida, DateTime FechaHoraLlegada
         , String TipoVuelo
@@ -58,13 +58,13 @@ namespace Vuelos.Domain.Model.Vuelos
             this.IdLugarDestino = IdLugarDestino;
             this.IdItinerario = IdItinerario;
             this.IdAeronave = IdAeronave;
-            this.NroVuelo = NroVuelo;
-            this.IdTripulacion = IdTripulacion;
-            this.FechaHoraPartida = FechaHoraPartida;
-            this.FechaHoraLlegada = FechaHoraLlegada;
-            this.TipoVuelo = TipoVuelo;
+            this.NroVuelo = new NroVueloValue(NroVuelo);
+            this.FechaHoraPartida = new FechaValue(FechaHoraPartida);
+            this.FechaHoraLlegada = new FechaValue(FechaHoraLlegada);
+            this.TipoVuelo = new TipoVueloValue(TipoVuelo);
             this.MillasVuelo = MillasVuelo;
             this.TiempoVuelo = TiempoVuelo;
+            this.IdTripulacion = IdTripulacion;
             _Tripulacion = new List<TripulanteDeVuelo>();
             _Reserva = new List<ReservaDeVuelo>();
         }

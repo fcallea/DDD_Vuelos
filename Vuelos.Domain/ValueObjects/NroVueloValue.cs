@@ -10,23 +10,25 @@ namespace Vuelos.Domain.ValueObjects
 {
     public record NroVueloValue
     {
-        public string Value { get; }
-        public NroVueloValue(string value)
+        public int Value { get; }
+        public NroVueloValue(int value)
         {
-            Match m = Regex.Match(Value, @"V-(\d{6})");
-            if ((m.Success) && (int.Parse(m.Groups[3].Value)) < 8)
+            /*
+            if (Value > 0)
             {
-                throw new BussinessRuleValidationException("El nro de vuelo no tiene formato requerido");
+                String msg = (String)"El nro de vuelo debe ser numerico positivo";
+                throw new BussinessRuleValidationException(msg);
             }
+            */
             Value = value;
         }
 
-        public static implicit operator string(NroVueloValue value)
+        public static implicit operator int(NroVueloValue value)
         {
             return value.Value;
         }
 
-        public static implicit operator NroVueloValue(string value)
+        public static implicit operator NroVueloValue(int value)
         {
             return new NroVueloValue(value);
         }

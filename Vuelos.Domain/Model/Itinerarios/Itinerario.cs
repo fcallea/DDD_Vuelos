@@ -17,14 +17,14 @@ namespace Vuelos.Domain.Model.Itinerarios
         public FechaValue FechaHoraDesde { get; private set; }
         public FechaValue FechaHoraHasta { get; private set; }
 
-        public Itinerario(Guid IdPista, Guid IdAeronave, NroVueloValue NroVuelo, FechaValue FechaHoraDesde, FechaValue FechaHoraHasta)
+        public Itinerario(Guid idPista, Guid idAeronave, int nroVuelo, DateTime fechaHoraDesde, DateTime fechaHoraHasta)
         {
             Id = Guid.NewGuid();
-            this.IdPista = IdPista;
-            this.IdAeronave = IdAeronave;
-            this.NroVuelo = NroVuelo;   
-            this.FechaHoraDesde = FechaHoraDesde;
-            this.FechaHoraHasta = FechaHoraHasta;
+            IdPista = idPista;
+            IdAeronave = idAeronave;
+            NroVuelo = new NroVueloValue(nroVuelo);   
+            FechaHoraDesde = new FechaValue(fechaHoraDesde);
+            FechaHoraHasta = new FechaValue(fechaHoraHasta);
         }
 
         public void ConfirmarItinerario()

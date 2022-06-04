@@ -11,6 +11,7 @@ namespace Vuelos.Domain.Repositories
     public interface IItinerarioRepository : IRepository<Itinerario, Guid>
     {
         Task UpdateAsync(Itinerario obj);
-        Task RemoveAsync(Itinerario obj);
+        Task CreateAsync(Itinerario obj);
+        //Task RemoveAsync(Itinerario obj);
     }
 }
