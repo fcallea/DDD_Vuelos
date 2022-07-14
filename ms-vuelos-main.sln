@@ -15,7 +15,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vuelos.WebApi", "Vuelos.Web
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vuelos.Test", "Vuelos.Test\Vuelos.Test.csproj", "{726F542D-59A8-4DA4-9062-93AB17BEA840}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vuelos.consola", "vuelos.consola\vuelos.consola.csproj", "{46B1B7C3-262E-4E16-B491-C190679D47E5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{96B13AD5-02E8-4041-9711-70450244E3C9}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		Dockerfile = Dockerfile
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "filedb", "filedb", "{17CB8FC1-3A9B-4026-AEF4-591AA7311B8C}"
+	ProjectSection(SolutionItems) = preProject
+		filedb\Create_database.sql = filedb\Create_database.sql
+		filedb\Dockerfile = filedb\Dockerfile
+		filedb\entrypoint.sh = filedb\entrypoint.sh
+		filedb\start.sh = filedb\start.sh
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,13 +59,12 @@ Global
 		{726F542D-59A8-4DA4-9062-93AB17BEA840}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{726F542D-59A8-4DA4-9062-93AB17BEA840}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{726F542D-59A8-4DA4-9062-93AB17BEA840}.Release|Any CPU.Build.0 = Release|Any CPU
-		{46B1B7C3-262E-4E16-B491-C190679D47E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{46B1B7C3-262E-4E16-B491-C190679D47E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{46B1B7C3-262E-4E16-B491-C190679D47E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{46B1B7C3-262E-4E16-B491-C190679D47E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{17CB8FC1-3A9B-4026-AEF4-591AA7311B8C} = {96B13AD5-02E8-4041-9711-70450244E3C9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7719CE1B-3BA5-4ED3-960E-12742DE4FC26}

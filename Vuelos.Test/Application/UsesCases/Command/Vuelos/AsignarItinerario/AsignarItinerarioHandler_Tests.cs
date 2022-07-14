@@ -43,7 +43,6 @@ namespace Vuelos.Test.Application.UsesCases.Command.Vuelos.AsignarItinerario
             unitOfWork = new Mock<IUnitOfWork>();
 
             itinerarioTest = new ItinerarioFactory().Create(idPista, idAeronave, nroVuelo, fechaHoraDesde, fechaHoraHasta);
-
         }
 
 

@@ -12,8 +12,6 @@ namespace Vuelos.Test.Application.Services
     {
         [Theory]
         [InlineData(0, 99999999, true)]
-        //[InlineData(0, 99999999, true)]
-        //[InlineData(-3, 5 false)]
         [InlineData(0, -8, false)]
         [InlineData(-999, 0 , false)]
         public async void ItinerarioService_CheckValidData(int IniExpectedNroVuelo, int FinExpectedNroVuelo,  bool isEqual)

@@ -21,9 +21,9 @@ namespace Vuelos.Test.Application.UsesCases.Command.Vuelos.CrearVuelo
             DateTime fechaHoraPartida = DateTime.Now;
             DateTime fechaHoraLlegada = DateTime.Now;
             String tipoVuelo = (String)"COMERCIAL";
-            decimal millasVuelo = new decimal(20.1);
-            Guid id = Guid.NewGuid();
-            int nroVuelo = 123;
+            int nroVuelo = 123; Guid id = Guid.NewGuid();
+            decimal millasVuelo = new decimal(20.1);           
+
             VueloDto vuelo =
                 new()
                 {
