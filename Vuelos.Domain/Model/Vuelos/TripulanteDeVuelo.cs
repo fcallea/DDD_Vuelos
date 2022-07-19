@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Vuelos.Domain.Model.Vuelos
 {
-    public class TripulanteDeVuelo: Entity<Guid>
+    public class TripulanteDeVuelo : Entity<Guid>
     {
         public Guid IdTripulante { get; private set; }
         public Guid IdCargo { get; private set; }

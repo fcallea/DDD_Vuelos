@@ -10,7 +10,7 @@ using Vuelos.Domain.Model.Vuelos;
 
 namespace Vuelos.Domain.Model.Lugares
 {
-   public class Lugar : AggregateRoot<Guid>
+    public class Lugar : AggregateRoot<Guid>
     {
         public Guid IdLocalidad { get; private set; }
         private readonly ICollection<Vuelo> _Vuelos;

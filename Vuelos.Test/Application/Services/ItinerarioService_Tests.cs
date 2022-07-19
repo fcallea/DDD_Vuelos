@@ -13,16 +13,15 @@ namespace Vuelos.Test.Application.Services
         [Theory]
         [InlineData(0, 99999999, true)]
         [InlineData(0, -8, false)]
-        [InlineData(-999, 0 , false)]
-        public async void ItinerarioService_CheckValidData(int IniExpectedNroVuelo, int FinExpectedNroVuelo,  bool isEqual)
+        [InlineData(-999, 0, false)]
+        public async void ItinerarioService_CheckValidData(int IniExpectedNroVuelo, int FinExpectedNroVuelo, bool isEqual)
         {
             var itinerarioService = new ItinerarioService();
 
-            if(isEqual)
+            if (isEqual)
             {
                 Assert.InRange(await itinerarioService.ObtenerNroVueloAsync(), IniExpectedNroVuelo, FinExpectedNroVuelo);
-            }
-            else
+            } else
             {
                 Assert.NotInRange(await itinerarioService.ObtenerNroVueloAsync(), 0, 99999999);
             }

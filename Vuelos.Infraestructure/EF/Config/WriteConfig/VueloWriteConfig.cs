@@ -18,11 +18,11 @@ namespace Vuelos.Infraestructure.EF.Config.WriteConfig
 {
     public class VueloWriteConfig :
           IEntityTypeConfiguration<Itinerario>
-        //, IEntityTypeConfiguration<Aeropuerto>
-        //, IEntityTypeConfiguration<Pista>
-        //, IEntityTypeConfiguration<Aeronave>
-        //, IEntityTypeConfiguration<Vuelo>
-        //, IEntityTypeConfiguration<Lugar>
+    //, IEntityTypeConfiguration<Aeropuerto>
+    //, IEntityTypeConfiguration<Pista>
+    //, IEntityTypeConfiguration<Aeronave>
+    //, IEntityTypeConfiguration<Vuelo>
+    //, IEntityTypeConfiguration<Lugar>
     {
         /*
         public void Configure(EntityTypeBuilder<Aeropuerto> builder)

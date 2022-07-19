@@ -28,17 +28,16 @@ namespace Vuelos.Application.UseCases.Queries.Vuelos.GetVueloById
             VueloDto result = null;
             try
             {
-        
-                 Vuelo objVuelo = await _vueloRepository.FindByIdAsync(request.Id);
 
-                 result = new VueloDto()
-                 {
-                     Id = objVuelo.Id,
-                     NroVuelo = objVuelo.NroVuelo,
-                 };
+                Vuelo objVuelo = await _vueloRepository.FindByIdAsync(request.Id);
 
-            }
-            catch (Exception ex)
+                result = new VueloDto()
+                {
+                    Id = objVuelo.Id,
+                    NroVuelo = objVuelo.NroVuelo,
+                };
+
+            } catch (Exception ex)
             {
                 _logger.LogError(ex, "Error al obtener Vuelo con id: { VueloId }", request.Id);
             }

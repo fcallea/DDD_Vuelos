@@ -29,7 +29,8 @@ namespace Vuelos.Domain.Model.Vuelos
 
         private readonly ICollection<TripulanteDeVuelo> _Tripulacion;
         public IReadOnlyCollection<TripulanteDeVuelo> Tripulantes
-        {   get
+        {
+            get
             {
                 return new ReadOnlyCollection<TripulanteDeVuelo>(_Tripulacion.ToList());
             }
@@ -37,7 +38,8 @@ namespace Vuelos.Domain.Model.Vuelos
 
         private readonly ICollection<ReservaDeVuelo> _Reserva;
         public IReadOnlyCollection<ReservaDeVuelo> Reservas
-        {   get
+        {
+            get
             {
                 return new ReadOnlyCollection<ReservaDeVuelo>(_Reserva.ToList());
             }

@@ -11,7 +11,7 @@ namespace Vuelos.Domain.ValueObjects
     {
         public string Value { get; }
         public TipoVueloValue(string value)
-        {       
+        {
             /*
             if (Value!="COMERCIAL")
             {

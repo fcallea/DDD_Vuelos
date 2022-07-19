@@ -11,11 +11,11 @@ namespace Vuelos.Infraestructure.EF.Config.ReadConfig
 {
     public class VueloReadConfig :
           IEntityTypeConfiguration<ItinerarioReadModel>
-        //, IEntityTypeConfiguration<AeropuertoReadModel>
-        //, IEntityTypeConfiguration<PistaReadModel>
-        //, IEntityTypeConfiguration<AeronaveReadModel>
-        //, IEntityTypeConfiguration<LugarReadModel>
-        //, IEntityTypeConfiguration<VueloReadModel>
+    //, IEntityTypeConfiguration<AeropuertoReadModel>
+    //, IEntityTypeConfiguration<PistaReadModel>
+    //, IEntityTypeConfiguration<AeronaveReadModel>
+    //, IEntityTypeConfiguration<LugarReadModel>
+    //, IEntityTypeConfiguration<VueloReadModel>
     {
 
         /*

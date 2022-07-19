@@ -28,7 +28,7 @@ namespace Vuelos.Application.UseCases.Command.Vuelos.AsignarItinerario
             //, IPistaService ipistaService
             //, IAeronaveService iaeronaveService
             , IItinerarioFactory itinerarioFactory
-            ,IUnitOfWork unitOfWork)
+            , IUnitOfWork unitOfWork)
         {
             _itinerarioRepository = itinerarioRepository;
             _logger = logger;
@@ -52,8 +52,8 @@ namespace Vuelos.Application.UseCases.Command.Vuelos.AsignarItinerario
                 Guid idPista = await _itinerarioService.ObtenerIdPistaAsync();
                 Guid idAeronave = await _itinerarioService.ObtenerIdAeronaveAsync();
 
-            //    //Guid idPista = await request.Itinerario.IdPista;
-            //    //Guid idAeronave = await request.Itinerario.IdAeronave;
+                //    //Guid idPista = await request.Itinerario.IdPista;
+                //    //Guid idAeronave = await request.Itinerario.IdAeronave;
                 Itinerario objItinerario = _itinerarioFactory.Create(idPista, idAeronave, nroVuelo, fechaHoraDesde, fechaHoraHasta);
 
                 objItinerario.ConfirmarItinerario();
@@ -63,8 +63,7 @@ namespace Vuelos.Application.UseCases.Command.Vuelos.AsignarItinerario
                 await _unitOfWork.Commit();
 
                 return objItinerario.Id;
-            }
-            catch (Exception ex)
+            } catch (Exception ex)
             {
                 _logger.LogError(ex, "Error al confirmar Itinerario");
             }

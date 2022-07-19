@@ -28,8 +28,7 @@ namespace Vuelos.Test.Application.Services
                 Assert.Equal(tipoVuelo, tipoVueloCompare);
                 Assert.InRange(milllas, 0, 999999999);
                 Assert.InRange(tiempovuelo, 0, 999999999);
-            }
-            else
+            } else
             {
                 Assert.NotEqual(tipoVuelo, tipoVueloCompare);
                 Assert.NotInRange(milllas, 0, 999999999);

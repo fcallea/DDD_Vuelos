@@ -11,8 +11,8 @@ namespace Vuelos.Domain.Event
     {
         public Guid AeronaveEnPistaId { get; }
         public Guid AeropuertoId { get; }
-        public Guid PistaId { get;  }
-        public Guid AeronaveId { get;  }
+        public Guid PistaId { get; }
+        public Guid AeronaveId { get; }
 
         public AeronaveEnPistaAsignado(Guid AeronaveEnPistaId, Guid AeropuertoId, Guid PistaId, Guid AeronaveId) : base(DateTime.Now)
         {

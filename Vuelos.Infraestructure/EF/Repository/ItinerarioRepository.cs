@@ -30,33 +30,33 @@ namespace Vuelos.Infraestructure.EF.Repository
             Console.WriteLine($"ACTUALIZANDO EL VUELO {obj.NroVuelo}");
             return Task.CompletedTask;
         }
-/*
+        /*
 
-        public readonly DbSet<Itinerario> _itinerario;
+				public readonly DbSet<Itinerario> _itinerario;
 
-        public ItinerarioRepository(WriteDbContext context)
-        {
-            _itinerario = context.Itinerario;
-        }
+				public ItinerarioRepository(WriteDbContext context)
+				{
+					_itinerario = context.Itinerario;
+				}
 
-        public async Task CreateAsync(Itinerario obj)
-        {
-            await _itinerario.AddAsync(obj);
-        }
+				public async Task CreateAsync(Itinerario obj)
+				{
+					await _itinerario.AddAsync(obj);
+				}
 
-        public async Task<Itinerario> FindByIdAsync(Guid id)
-        {
-            return await _itinerario.Include("_vuelos")
-                    .SingleAsync(x => x.Id == id);
-        }
+				public async Task<Itinerario> FindByIdAsync(Guid id)
+				{
+					return await _itinerario.Include("_vuelos")
+							.SingleAsync(x => x.Id == id);
+				}
 
-        public Task UpdateAsync(Itinerario obj)
-        {
-            _itinerario.Update(obj);
+				public Task UpdateAsync(Itinerario obj)
+				{
+					_itinerario.Update(obj);
 
-            return Task.CompletedTask;
-        }
-*/
+					return Task.CompletedTask;
+				}
+		*/
 
     }
 }

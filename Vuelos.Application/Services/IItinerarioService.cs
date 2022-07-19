@@ -13,7 +13,7 @@ namespace Vuelos.Application.Services
         Task<Guid> ObtenerIdAeronaveAsync();
         Task<int> ObtenerNroVueloAsync();
         Task<DateTime> ObtenerFechaDesdeAsync();
-        Task<DateTime> ObtenerFechaHastaAsync();        
-            
+        Task<DateTime> ObtenerFechaHastaAsync();
+
     }
 }

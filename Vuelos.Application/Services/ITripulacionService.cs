@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vuelos.Application.Services
 {
-    public interface ITripulacionService 
+    public interface ITripulacionService
     {
         Task<Guid> CrearTripulacionAsync();
     }

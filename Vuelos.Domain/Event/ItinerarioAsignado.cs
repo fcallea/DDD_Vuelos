@@ -11,7 +11,7 @@ namespace Vuelos.Domain.Event
     {
         public Guid IdItinerario { get; }
         public Guid IdPista { get; }
-        public Guid IdAeronave { get; }        
+        public Guid IdAeronave { get; }
         public int NroVuelo { get; }
         public DateTime FechaHoraDesde { get; }
         public DateTime FechaHoraHasta { get; }

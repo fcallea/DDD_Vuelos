@@ -14,7 +14,7 @@ using Vuelos.Domain.Repositories;
 
 namespace Vuelos.Application.UseCases.Command.Vuelos.CrearVuelo
 {
-   public class CrearVueloHandler : IRequestHandler<CrearVueloCommand, Guid>
+    public class CrearVueloHandler : IRequestHandler<CrearVueloCommand, Guid>
     {
         private readonly IVueloRepository _vueloRepository;
         private readonly ILogger<CrearVueloHandler> _logger;
@@ -45,31 +45,31 @@ namespace Vuelos.Application.UseCases.Command.Vuelos.CrearVuelo
 
         public async Task<Guid> Handle(CrearVueloCommand request, CancellationToken cancellationToken)
         {
- 
+
             try
             {
-                
-                 //Guid idTripulacion = await _itripulacionService.CrearTripulacionAsync();
-                 //Guid idLugarDestino = await _ivueloService.CrearLugarDestinoAsync();
-                 //DateTime fechaHoraPartida = await _ivueloService.CrearFechaHoraPartidaAsync();
-                 //DateTime fechaHoraLlegada = await _ivueloService.CrearFechaHoraLlegadaAsync();
-                 //string tipoVuelo = await _ivueloService.CrearTipoVueloAsync();
-                 //decimal millasVuelo = await _ivueloService.CrearMillasVueloAsync();
-                 Guid idItinerario = await _itinerarioService.ObtenerIdItinerarioAsync();
 
-                 Guid idAeronave = await _itinerarioService.ObtenerIdAeronaveAsync();
-                 int nroVuelo = await _itinerarioService.ObtenerNroVueloAsync();
-                 //Guid idLugarOrigen = await _ivueloService.CrearLugarOrigenAsync();
-                 //decimal tiempoVuelo = await _ivueloService.CrearTiempoVueloAsync();
+                //Guid idTripulacion = await _itripulacionService.CrearTripulacionAsync();
+                //Guid idLugarDestino = await _ivueloService.CrearLugarDestinoAsync();
+                //DateTime fechaHoraPartida = await _ivueloService.CrearFechaHoraPartidaAsync();
+                //DateTime fechaHoraLlegada = await _ivueloService.CrearFechaHoraLlegadaAsync();
+                //string tipoVuelo = await _ivueloService.CrearTipoVueloAsync();
+                //decimal millasVuelo = await _ivueloService.CrearMillasVueloAsync();
+                Guid idItinerario = await _itinerarioService.ObtenerIdItinerarioAsync();
 
-                 Guid idLugarOrigen = request.Vuelo.IdLugarOrigen;
-                 Guid idLugarDestino = request.Vuelo.IdLugarDestino;
-                 Guid idTripulacion = request.Vuelo.IdTripulacion;
-                 DateTime fechaHoraPartida = request.Vuelo.FechaHoraPartida;
-                 DateTime fechaHoraLlegada = request.Vuelo.FechaHoraLlegada;
-                 string tipoVuelo = request.Vuelo.TipoVuelo;
-                 decimal millasVuelo = request.Vuelo.MillasVuelo;
-                 decimal tiempoVuelo = new decimal(15.2);
+                Guid idAeronave = await _itinerarioService.ObtenerIdAeronaveAsync();
+                int nroVuelo = await _itinerarioService.ObtenerNroVueloAsync();
+                //Guid idLugarOrigen = await _ivueloService.CrearLugarOrigenAsync();
+                //decimal tiempoVuelo = await _ivueloService.CrearTiempoVueloAsync();
+
+                Guid idLugarOrigen = request.Vuelo.IdLugarOrigen;
+                Guid idLugarDestino = request.Vuelo.IdLugarDestino;
+                Guid idTripulacion = request.Vuelo.IdTripulacion;
+                DateTime fechaHoraPartida = request.Vuelo.FechaHoraPartida;
+                DateTime fechaHoraLlegada = request.Vuelo.FechaHoraLlegada;
+                string tipoVuelo = request.Vuelo.TipoVuelo;
+                decimal millasVuelo = request.Vuelo.MillasVuelo;
+                decimal tiempoVuelo = new decimal(15.2);
 
                 /*
                  Vuelo objVuelo = _vueloFactory.Create(idLugarOrigen, idLugarDestino
@@ -89,18 +89,17 @@ namespace Vuelos.Application.UseCases.Command.Vuelos.CrearVuelo
 
                 objVuelo.ConsolidarVuelo();
 
-                 await _vueloRepository.CreateAsync(objVuelo);
+                await _vueloRepository.CreateAsync(objVuelo);
 
-                 await _unitOfWork.Commit();
+                await _unitOfWork.Commit();
 
-                 return objVuelo.Id;
-             }
-             catch (Exception ex)
-             {
-                 _logger.LogError(ex, "Error al crear vuelo");
-             }
+                return objVuelo.Id;
+            } catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error al crear vuelo");
+            }
 
-                return Guid.Empty;
+            return Guid.Empty;
         }
     }
 }

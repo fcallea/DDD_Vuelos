@@ -23,13 +23,12 @@ namespace Vuelos.Test.Application.Services
             if (isEqual)
             {
                 Assert.Equal(expectedNroVuelo, nroVuelo);
-            }
-            else
+            } else
             {
                 Assert.NotEqual(expectedNroVuelo, nroVuelo);
             }
             Assert.NotNull((object)await pistaService.GetIdPistaAsync());
-            
+
         }
     }
 }

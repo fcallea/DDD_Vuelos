@@ -83,7 +83,7 @@ namespace Vuelos.Test.Application.UsesCases.Command.Vuelos.AsignarItinerario
             );
             var objRequest = new AsignarItinerarioCommand(
                itinerarioDtoTest
-           ) ;
+           );
             var tcs = new CancellationTokenSource(1000);
             var result = objHandler.Handle(objRequest, tcs.Token);
             logger.Verify(mock => mock.Log(

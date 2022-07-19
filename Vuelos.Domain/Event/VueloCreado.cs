@@ -12,7 +12,7 @@ namespace Vuelos.Domain.Event
         public Guid IdVuelo { get; }
         public int NroVuelo { get; }
         public DateTime FechaHoraPartida { get; }
-        public DateTime FechaHoraLlegada { get; }        
+        public DateTime FechaHoraLlegada { get; }
         public decimal MillasVuelo { get; }
         public decimal TiempoVuelo { get; }
 
@@ -20,7 +20,7 @@ namespace Vuelos.Domain.Event
         , DateTime FechaHoraPartida, DateTime FechaHoraLlegada
         , decimal MillasVuelo, decimal TiempoVuelo) : base(DateTime.Now)
         {
-            this.IdVuelo = IdVuelo; 
+            this.IdVuelo = IdVuelo;
             this.NroVuelo = NroVuelo;
             this.FechaHoraPartida = FechaHoraPartida;
             this.FechaHoraLlegada = FechaHoraLlegada;

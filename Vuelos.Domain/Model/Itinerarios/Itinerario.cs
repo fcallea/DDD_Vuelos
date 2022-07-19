@@ -22,7 +22,7 @@ namespace Vuelos.Domain.Model.Itinerarios
             Id = Guid.NewGuid();
             IdPista = idPista;
             IdAeronave = idAeronave;
-            NroVuelo = new NroVueloValue(nroVuelo);   
+            NroVuelo = new NroVueloValue(nroVuelo);
             FechaHoraDesde = new FechaValue(fechaHoraDesde);
             FechaHoraHasta = new FechaValue(fechaHoraHasta);
         }

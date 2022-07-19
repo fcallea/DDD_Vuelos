@@ -23,8 +23,7 @@ namespace Vuelos.Test.Application.Services
             {
                 Assert.NotNull((object)await aeronaveService.ObtenerNroAsientosAsync());
                 Assert.InRange(await aeronaveService.ObtenerNroAsientosAsync(), 30, limiteNroAsientos);
-            }
-            else
+            } else
             {
                 Assert.NotInRange(await aeronaveService.ObtenerNroAsientosAsync(), 30, limiteNroAsientos);
             }

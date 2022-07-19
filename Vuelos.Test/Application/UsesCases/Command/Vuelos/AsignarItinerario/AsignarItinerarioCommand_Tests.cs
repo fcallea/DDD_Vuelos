@@ -19,8 +19,8 @@ namespace Vuelos.Test.Application.UsesCases.Command.Vuelos.AsignarItinerario
         public void AsignarItinerarioCommand_DataValid()
         {
             Guid IdPista = Guid.NewGuid();
-            Guid IdAeronave = Guid.NewGuid(); 
-            DateTime fechaHoraDesde = DateTime.Now; 
+            Guid IdAeronave = Guid.NewGuid();
+            DateTime fechaHoraDesde = DateTime.Now;
             DateTime fechaHoraHasta = DateTime.Now;
             int NroVuelo = 123;
 

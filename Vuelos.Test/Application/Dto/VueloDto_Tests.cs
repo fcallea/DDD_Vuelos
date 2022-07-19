@@ -37,7 +37,7 @@ namespace Vuelos.Test.Application.Dto
             vuelo.IdLugarDestino = IdLugarDestino;
             vuelo.IdItinerario = IdItinerario;
             vuelo.IdTripulacion = IdTripulacion;
-            vuelo.FechaHoraPartida = FechaHoraPartida; 
+            vuelo.FechaHoraPartida = FechaHoraPartida;
             vuelo.FechaHoraLlegada = FechaHoraLlegada;
             vuelo.TipoVuelo = TipoVuelo;
             vuelo.MillasVuelo = MillasVuelo;
@@ -51,7 +51,7 @@ namespace Vuelos.Test.Application.Dto
             Assert.Equal(TipoVuelo, vuelo.TipoVuelo);
             Assert.Equal(MillasVuelo, vuelo.MillasVuelo);
             Assert.NotNull((object)vuelo.Id);
-            Assert.Equal(nroVuelo,vuelo.NroVuelo);
+            Assert.Equal(nroVuelo, vuelo.NroVuelo);
         }
     }
 }
