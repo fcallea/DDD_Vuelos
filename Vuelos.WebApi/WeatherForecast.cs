@@ -1,9 +1,7 @@
 using System;
 
-namespace Vuelos.WebApi
-{
-    public class WeatherForecast
-    {
+namespace Vuelos.WebApi {
+    public class WeatherForecast {
         public DateTime Date { get; set; }
 
         public int TemperatureC { get; set; }

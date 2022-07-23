@@ -9,10 +9,8 @@ using Vuelos.Infraestructure.EF.ReadModel;
 using Vuelos.Domain.Event;
 using ShareKernel.Core;
 
-namespace Vuelos.Infraestructure.EF.Contexts
-{
-    public class ReadDbContext : DbContext
-    {
+namespace Vuelos.Infraestructure.EF.Contexts {
+    public class ReadDbContext : DbContext {
         //public virtual DbSet<AeropuertoReadModel> Aeropuerto { set; get; }
         //public virtual DbSet<PistaReadModel> Pista { set; get; }
         //public virtual DbSet<AeronaveReadModel> Aeronave { set; get; }
@@ -20,12 +18,10 @@ namespace Vuelos.Infraestructure.EF.Contexts
         //public virtual DbSet<LugarReadModel> Lugar { set; get; }
         //public virtual DbSet<VueloReadModel> Vuelo { set; get; }
 
-        public ReadDbContext(DbContextOptions<ReadDbContext> options) : base(options)
-        {
+        public ReadDbContext(DbContextOptions<ReadDbContext> options) : base(options) {
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
+        protected override void OnModelCreating(ModelBuilder modelBuilder) {
             base.OnModelCreating(modelBuilder);
 
             var vueloConfig = new VueloReadConfig();

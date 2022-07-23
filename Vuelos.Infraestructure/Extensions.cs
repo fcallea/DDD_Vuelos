@@ -15,14 +15,11 @@ using Vuelos.Infraestructure.EF.Contexts;
 using Vuelos.Infraestructure.EF.Repository;
 using Vuelos.Infraestructure.MemoryRepository;
 
-namespace Vuelos.Infraestructure
-{
-    public static class Extensions
-    {
+namespace Vuelos.Infraestructure {
+    public static class Extensions {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services,
-            IConfiguration configuration)
-        {
-            
+            IConfiguration configuration) {
+
             services.AddApplication();
             services.AddMediatR(Assembly.GetExecutingAssembly());
             /*
@@ -38,7 +35,7 @@ namespace Vuelos.Infraestructure
             services.AddScoped<IVueloRepository, VueloRepository>();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            
+
             /*
             services.AddScoped<IVueloRepository, VueloRepository>();
             services.AddScoped<IItinerarioRepository, ItinerarioRepository>();
@@ -47,7 +44,7 @@ namespace Vuelos.Infraestructure
             //TODO: Eliminar despues. Solo para proposito de pruebas
             //services.AddSingleton<MemoryDatabase>();
             //services.AddScoped<IVueloRepository, MemoryVueloRepository>();
-            
+
 
 
             return services;

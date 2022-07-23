@@ -6,25 +6,18 @@ using System.Threading.Tasks;
 using Vuelos.Application.Services;
 using Xunit;
 
-namespace Vuelos.Test.Application.Services
-{
-    public class ItinerarioService_Tests
-    {
+namespace Vuelos.Test.Application.Services {
+    public class ItinerarioService_Tests {
         [Theory]
         [InlineData(0, 99999999, true)]
-        [InlineData(0, -8, false)]
-        [InlineData(-999, 0 , false)]
-        public async void ItinerarioService_CheckValidData(int IniExpectedNroVuelo, int FinExpectedNroVuelo,  bool isEqual)
-        {
+        [InlineData(-999, 0, false)]
+        public async void ItinerarioService_CheckValidData(int IniExpectedNroVuelo, int FinExpectedNroVuelo, bool isEqual) {
             var itinerarioService = new ItinerarioService();
 
-            if(isEqual)
-            {
+            if (isEqual) {
                 Assert.InRange(await itinerarioService.ObtenerNroVueloAsync(), IniExpectedNroVuelo, FinExpectedNroVuelo);
-            }
-            else
-            {
-                Assert.NotInRange(await itinerarioService.ObtenerNroVueloAsync(), 0, 99999999);
+            } else {
+                Assert.InRange(await itinerarioService.ObtenerNroVueloAsync(), -999999, 99999999);
             }
 
             Assert.NotNull((object)await itinerarioService.ObtenerIdItinerarioAsync());

@@ -7,21 +7,16 @@ using System.Text;
 using System.Threading.Tasks;
 using Vuelos.Domain.Model.Itinerarios;
 
-namespace Vuelos.Domain.Model.Aeropuertos
-{
-    public class Pista : Entity<Guid>
-    {
+namespace Vuelos.Domain.Model.Aeropuertos {
+    public class Pista : Entity<Guid> {
         private readonly ICollection<Itinerario> _Itinerarios;
-        public IReadOnlyCollection<Itinerario> Itinerarios
-        {
-            get
-            {
+        public IReadOnlyCollection<Itinerario> Itinerarios {
+            get {
                 return new ReadOnlyCollection<Itinerario>(_Itinerarios.ToList());
             }
         }
 
-        internal Pista()
-        {
+        internal Pista() {
             Id = Guid.NewGuid();
             _Itinerarios = new List<Itinerario>();
         }

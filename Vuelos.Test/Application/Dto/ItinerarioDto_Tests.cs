@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 using Vuelos.Application.Dto.Vuelo;
 using Xunit;
 
-namespace Vuelos.Test.Application.Dto
-{
-    public class ItinerarioDto_Tests
-    {
+namespace Vuelos.Test.Application.Dto {
+    public class ItinerarioDto_Tests {
         [Fact]
-        public void ItinerarioDto_CheckPropertiesValid()
-        {
+        public void ItinerarioDto_CheckPropertiesValid() {
             var IdPista = Guid.NewGuid();
             var IdAeronave = Guid.NewGuid();
             DateTime FechaHoraDesde = DateTime.Now;

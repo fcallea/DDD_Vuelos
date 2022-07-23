@@ -6,10 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Vuelos.Domain.Model.Aeronaves;
 
-namespace Vuelos.Domain.Repositories
-{
-    public interface IAeronaveRepository : IRepository<Aeronave, Guid>
-    {
+namespace Vuelos.Domain.Repositories {
+    public interface IAeronaveRepository : IRepository<Aeronave, Guid> {
         Task UpdateAsync(Aeronave obj);
 
         Task RemoveAsync(Aeronave obj);

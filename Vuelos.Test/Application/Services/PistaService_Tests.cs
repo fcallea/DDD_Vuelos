@@ -6,30 +6,24 @@ using System.Threading.Tasks;
 using Vuelos.Application.Services;
 using Xunit;
 
-namespace Vuelos.Test.Application.Services
-{
-    public class PistaService_Tests
-    {
+namespace Vuelos.Test.Application.Services {
+    public class PistaService_Tests {
         [Theory]
         [InlineData(1, false)]
         [InlineData(2, false)]
         [InlineData(3, false)]
         [InlineData(4, false)]
         [InlineData(0, false)]
-        public async void PistaService_CheckValidData(int expectedNroVuelo, bool isEqual)
-        {
+        public async void PistaService_CheckValidData(int expectedNroVuelo, bool isEqual) {
             var pistaService = new PistaService();
             int nroVuelo = await pistaService.AsignarNroVueloAsync();
-            if (isEqual)
-            {
+            if (isEqual) {
                 Assert.Equal(expectedNroVuelo, nroVuelo);
-            }
-            else
-            {
+            } else {
                 Assert.NotEqual(expectedNroVuelo, nroVuelo);
             }
             Assert.NotNull((object)await pistaService.GetIdPistaAsync());
-            
+
         }
     }
 }

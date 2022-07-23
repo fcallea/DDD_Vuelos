@@ -14,15 +14,14 @@ using Vuelos.Domain.Model.Tripulaciones;
 using Vuelos.Domain.Model.Vuelos;
 using Vuelos.Domain.ValueObjects;
 
-namespace Vuelos.Infraestructure.EF.Config.WriteConfig
-{
+namespace Vuelos.Infraestructure.EF.Config.WriteConfig {
     public class VueloWriteConfig :
           IEntityTypeConfiguration<Itinerario>
-        //, IEntityTypeConfiguration<Aeropuerto>
-        //, IEntityTypeConfiguration<Pista>
-        //, IEntityTypeConfiguration<Aeronave>
-        //, IEntityTypeConfiguration<Vuelo>
-        //, IEntityTypeConfiguration<Lugar>
+    //, IEntityTypeConfiguration<Aeropuerto>
+    //, IEntityTypeConfiguration<Pista>
+    //, IEntityTypeConfiguration<Aeronave>
+    //, IEntityTypeConfiguration<Vuelo>
+    //, IEntityTypeConfiguration<Lugar>
     {
         /*
         public void Configure(EntityTypeBuilder<Aeropuerto> builder)
@@ -101,8 +100,7 @@ namespace Vuelos.Infraestructure.EF.Config.WriteConfig
 
         */
 
-        public void Configure(EntityTypeBuilder<Itinerario> builder)
-        {
+        public void Configure(EntityTypeBuilder<Itinerario> builder) {
             builder.ToTable("Itinerario");
             builder.HasKey(x => x.Id);
 

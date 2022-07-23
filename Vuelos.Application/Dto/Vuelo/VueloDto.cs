@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 using Vuelos.Domain.Model.Vuelos;
 using Vuelos.Domain.ValueObjects;
 
-namespace Vuelos.Application.Dto.Vuelo
-{
-    public class VueloDto
-    {
+namespace Vuelos.Application.Dto.Vuelo {
+    public class VueloDto {
         public Guid IdLugarOrigen { get; set; }
         public Guid IdLugarDestino { get; set; }
         public Guid IdItinerario { get; set; }
@@ -20,10 +18,9 @@ namespace Vuelos.Application.Dto.Vuelo
         public decimal MillasVuelo { get; set; }
         public ICollection<TripulanteDto> Tripulantes { get; set; }
         public Guid Id { get; set; }
-        public int  NroVuelo { get; set; }
+        public int NroVuelo { get; set; }
 
-        public VueloDto()
-        {
+        public VueloDto() {
             Tripulantes = new List<TripulanteDto>();
         }
     }

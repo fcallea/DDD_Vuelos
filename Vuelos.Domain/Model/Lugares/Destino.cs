@@ -5,12 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vuelos.Domain.Model.Lugares
-{
-    public class Destino : Entity<Guid>
-    {
-        public Destino()
-        {
+namespace Vuelos.Domain.Model.Lugares {
+    public class Destino : Entity<Guid> {
+        public Destino() {
             Id = Guid.NewGuid();
         }
     }

@@ -6,13 +6,10 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Vuelos.Domain.ValueObjects
-{
-    public record NroVueloValue
-    {
+namespace Vuelos.Domain.ValueObjects {
+    public record NroVueloValue {
         public int Value { get; }
-        public NroVueloValue(int value)
-        {
+        public NroVueloValue(int value) {
             /*
             if (Value > 0)
             {
@@ -23,13 +20,11 @@ namespace Vuelos.Domain.ValueObjects
             Value = value;
         }
 
-        public static implicit operator int(NroVueloValue value)
-        {
+        public static implicit operator int(NroVueloValue value) {
             return value.Value;
         }
 
-        public static implicit operator NroVueloValue(int value)
-        {
+        public static implicit operator NroVueloValue(int value) {
             return new NroVueloValue(value);
         }
 

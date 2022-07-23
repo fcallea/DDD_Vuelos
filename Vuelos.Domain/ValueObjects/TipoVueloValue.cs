@@ -5,13 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vuelos.Domain.ValueObjects
-{
-    public record TipoVueloValue
-    {
+namespace Vuelos.Domain.ValueObjects {
+    public record TipoVueloValue {
         public string Value { get; }
-        public TipoVueloValue(string value)
-        {       
+        public TipoVueloValue(string value) {
             /*
             if (Value!="COMERCIAL")
             {
@@ -22,13 +19,11 @@ namespace Vuelos.Domain.ValueObjects
             Value = value;
         }
 
-        public static implicit operator string(TipoVueloValue value)
-        {
+        public static implicit operator string(TipoVueloValue value) {
             return value.Value;
         }
 
-        public static implicit operator TipoVueloValue(string value)
-        {
+        public static implicit operator TipoVueloValue(string value) {
             return new TipoVueloValue(value);
         }
 

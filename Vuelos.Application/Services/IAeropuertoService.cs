@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vuelos.Application.Services
-{
-    internal interface IAeropuertoService
-    {
+namespace Vuelos.Application.Services {
+    internal interface IAeropuertoService {
         Task<int> GenerarNroVueloAsync();
     }
 }

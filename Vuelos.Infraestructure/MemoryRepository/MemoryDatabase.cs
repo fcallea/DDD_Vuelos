@@ -5,19 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Vuelos.Domain.Model.Vuelos;
 
-namespace Vuelos.Infraestructure.MemoryRepository
-{
-    public class MemoryDatabase
-    {
+namespace Vuelos.Infraestructure.MemoryRepository {
+    public class MemoryDatabase {
         private readonly List<Vuelo> _vuelos;
 
-        public List<Vuelo> Vuelos
-        {
+        public List<Vuelo> Vuelos {
             get { return _vuelos; }
         }
 
-        public MemoryDatabase()
-        {
+        public MemoryDatabase() {
             _vuelos = new List<Vuelo>();
         }
 

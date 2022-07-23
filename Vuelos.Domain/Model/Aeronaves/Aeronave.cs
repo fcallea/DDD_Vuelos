@@ -8,10 +8,8 @@ using System.Threading.Tasks;
 using Vuelos.Domain.Model.Aeronaves;
 using Vuelos.Domain.Model.Itinerarios;
 
-namespace Vuelos.Domain.Model.Aeronaves
-{
-    public class Aeronave : AggregateRoot<Guid>
-    {
+namespace Vuelos.Domain.Model.Aeronaves {
+    public class Aeronave : AggregateRoot<Guid> {
         public string Estado { get; private set; }
         public int NroAsientos { get; private set; }
         public string Marca { get; private set; }
@@ -20,16 +18,13 @@ namespace Vuelos.Domain.Model.Aeronaves
         public decimal CapacidadTanque { get; private set; }
 
         private readonly ICollection<Itinerario> _Itinerarios;
-        public IReadOnlyCollection<Itinerario> Itinerarios
-        {
-            get
-            {
+        public IReadOnlyCollection<Itinerario> Itinerarios {
+            get {
                 return new ReadOnlyCollection<Itinerario>(_Itinerarios.ToList());
             }
         }
 
-        public Aeronave(string Estado, int NroAsientos, string Marca, string Modelo, decimal CapacidadCarga, decimal CapacidadTanque)
-        {
+        public Aeronave(string Estado, int NroAsientos, string Marca, string Modelo, decimal CapacidadCarga, decimal CapacidadTanque) {
             Id = Guid.NewGuid();
             this.Estado = Estado;
             this.NroAsientos = NroAsientos;

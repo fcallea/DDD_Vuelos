@@ -9,10 +9,8 @@ using Vuelos.Domain.Event;
 using Vuelos.Domain.Model.Vuelos;
 using Vuelos.Domain.ValueObjects;
 
-namespace Vuelos.Domain.Model.Vuelos
-{
-    public class Vuelo : AggregateRoot<Guid>
-    {
+namespace Vuelos.Domain.Model.Vuelos {
+    public class Vuelo : AggregateRoot<Guid> {
         public Guid IdLugarOrigen { get; private set; }
         public Guid IdLugarDestino { get; private set; }
         public Guid IdItinerario { get; private set; }
@@ -28,17 +26,15 @@ namespace Vuelos.Domain.Model.Vuelos
         public Guid IdTripulacion { get; private set; }
 
         private readonly ICollection<TripulanteDeVuelo> _Tripulacion;
-        public IReadOnlyCollection<TripulanteDeVuelo> Tripulantes
-        {   get
-            {
+        public IReadOnlyCollection<TripulanteDeVuelo> Tripulantes {
+            get {
                 return new ReadOnlyCollection<TripulanteDeVuelo>(_Tripulacion.ToList());
             }
         }
 
         private readonly ICollection<ReservaDeVuelo> _Reserva;
-        public IReadOnlyCollection<ReservaDeVuelo> Reservas
-        {   get
-            {
+        public IReadOnlyCollection<ReservaDeVuelo> Reservas {
+            get {
                 return new ReadOnlyCollection<ReservaDeVuelo>(_Reserva.ToList());
             }
         }
@@ -51,8 +47,7 @@ namespace Vuelos.Domain.Model.Vuelos
         , Guid IdTripulacion
         , DateTime FechaHoraPartida, DateTime FechaHoraLlegada
         , String TipoVuelo
-        , decimal MillasVuelo, decimal TiempoVuelo)
-        {
+        , decimal MillasVuelo, decimal TiempoVuelo) {
             Id = Guid.NewGuid();
             this.IdLugarOrigen = IdLugarOrigen;
             this.IdLugarDestino = IdLugarDestino;
@@ -69,8 +64,7 @@ namespace Vuelos.Domain.Model.Vuelos
             _Reserva = new List<ReservaDeVuelo>();
         }
 
-        public void ConsolidarVuelo()
-        {
+        public void ConsolidarVuelo() {
             var evento = new VueloCreado(Id, NroVuelo, FechaHoraPartida, FechaHoraLlegada, MillasVuelo, TiempoVuelo);
             AddDomainEvent(evento);
         }

@@ -6,26 +6,20 @@ using System.Threading.Tasks;
 using Vuelos.Application.Services;
 using Xunit;
 
-namespace Vuelos.Test.Application.Services
-{
-    public class AeropuertoService_Tests
-    {
+namespace Vuelos.Test.Application.Services {
+    public class AeropuertoService_Tests {
         [Theory]
-        [InlineData(123, false)]
+        [InlineData(123, true)]
         [InlineData(0000, false)]
         [InlineData(217, false)]
         [InlineData(-5, false)]
         [InlineData(0, false)]
-        public async void AeropuertoService_CheckValidData(int expectedNroVuelo, bool isEqual)
-        {
+        public async void AeropuertoService_CheckValidData(int expectedNroVuelo, bool isEqual) {
             var aeropuertoService = new AeropuertoService();
             int nroVuelo = await aeropuertoService.GenerarNroVueloAsync();
-            if (isEqual)
-            {
+            if (isEqual) {
                 Assert.Equal(expectedNroVuelo, nroVuelo);
-            }
-            else
-            {
+            } else {
                 Assert.NotEqual(expectedNroVuelo, nroVuelo);
             }
         }
