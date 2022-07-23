@@ -5,13 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vuelos.Domain.ValueObjects
-{
-    public record FechaValue
-    {
+namespace Vuelos.Domain.ValueObjects {
+    public record FechaValue {
         public DateTime Value { get; }
-        public FechaValue(DateTime value)
-        {
+        public FechaValue(DateTime value) {
             /*
             if (value == null)
             {
@@ -21,13 +18,11 @@ namespace Vuelos.Domain.ValueObjects
             Value = value;
         }
 
-        public static implicit operator DateTime(FechaValue value)
-        {
+        public static implicit operator DateTime(FechaValue value) {
             return value.Value;
         }
 
-        public static implicit operator FechaValue(DateTime value)
-        {
+        public static implicit operator FechaValue(DateTime value) {
             return new FechaValue(value);
         }
     }

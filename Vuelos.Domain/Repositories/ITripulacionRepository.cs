@@ -6,10 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Vuelos.Domain.Model.Tripulaciones;
 
-namespace Vuelos.Domain.Repositories
-{
-    public interface ITripulacionRepository : IRepository<Tripulacion, Guid>
-    {
+namespace Vuelos.Domain.Repositories {
+    public interface ITripulacionRepository : IRepository<Tripulacion, Guid> {
         Task UpdateAsync(Tripulacion obj);
 
         Task RemoveAsync(Tripulacion obj);

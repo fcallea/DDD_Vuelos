@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 using Vuelos.Application.Dto.Vuelo;
 using Xunit;
 
-namespace Vuelos.Test.Application.Dto
-{
-    public class VueloDto_Tests
-    {
+namespace Vuelos.Test.Application.Dto {
+    public class VueloDto_Tests {
         [Fact]
-        public void VueloDto_CheckPropertiesValid()
-        {
+        public void VueloDto_CheckPropertiesValid() {
             var IdLugarDestino = Guid.NewGuid();
             var IdItinerario = Guid.NewGuid();
             var IdTripulacion = Guid.NewGuid();

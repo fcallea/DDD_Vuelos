@@ -12,10 +12,8 @@ using Vuelos.Domain.Model.Lugares;
 using Vuelos.Domain.Model.Vuelos;
 using Vuelos.Infraestructure.EF.Config.WriteConfig;
 
-namespace Vuelos.Infraestructure.EF.Contexts
-{
-    public class WriteDbContext : DbContext
-    {
+namespace Vuelos.Infraestructure.EF.Contexts {
+    public class WriteDbContext : DbContext {
         //public virtual DbSet<Aeropuerto> Aeropuerto { get; set; }
         //public virtual DbSet<Pista> Pista { get; set; }
         //public virtual DbSet<Aeronave> Aeronave { get; set; }
@@ -23,12 +21,10 @@ namespace Vuelos.Infraestructure.EF.Contexts
         //public virtual DbSet<Vuelo> Vuelo { get; set; }
         //public virtual DbSet<Lugar> Lugar { get; set; }
 
-        public WriteDbContext(DbContextOptions<WriteDbContext> options) : base(options)
-        {
+        public WriteDbContext(DbContextOptions<WriteDbContext> options) : base(options) {
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
+        protected override void OnModelCreating(ModelBuilder modelBuilder) {
             base.OnModelCreating(modelBuilder);
 
             var vueloConfig = new VueloWriteConfig();

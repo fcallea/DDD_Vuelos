@@ -7,8 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Vuelos.Infraestructure.EF.ReadModel;
 
-namespace Vuelos.Infraestructure.EF.Config.ReadConfig
-{
+namespace Vuelos.Infraestructure.EF.Config.ReadConfig {
     public class VueloReadConfig :
           IEntityTypeConfiguration<ItinerarioReadModel>
     //, IEntityTypeConfiguration<AeropuertoReadModel>
@@ -78,8 +77,7 @@ namespace Vuelos.Infraestructure.EF.Config.ReadConfig
         }
         */
 
-        public void Configure(EntityTypeBuilder<ItinerarioReadModel> builder)
-        {
+        public void Configure(EntityTypeBuilder<ItinerarioReadModel> builder) {
             builder.ToTable("Itinerario");
             builder.HasKey(x => x.IdItinerario);
 

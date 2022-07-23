@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vuelos.Infraestructure.EF.ReadModel
-{
-    public class AeronaveReadModel
-    {
+namespace Vuelos.Infraestructure.EF.ReadModel {
+    public class AeronaveReadModel {
         public Guid Id { get; set; }
         public string Estado { get; set; }
         public int NroAsientos { get; set; }

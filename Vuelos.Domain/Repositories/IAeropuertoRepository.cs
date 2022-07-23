@@ -6,10 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Vuelos.Domain.Model.Aeropuertos;
 
-namespace Vuelos.Domain.Repositories
-{
-    public interface IAeropuertoRepository : IRepository<Aeropuerto, Guid>
-    {
+namespace Vuelos.Domain.Repositories {
+    public interface IAeropuertoRepository : IRepository<Aeropuerto, Guid> {
         Task UpdateAsync(Aeropuerto obj);
 
         Task RemoveAsync(Aeropuerto obj);

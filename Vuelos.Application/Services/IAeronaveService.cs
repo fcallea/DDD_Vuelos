@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vuelos.Application.Services
-{
-    public interface IAeronaveService
-    {
+namespace Vuelos.Application.Services {
+    public interface IAeronaveService {
         Task<Guid> ObtenerIdAeronaveAsync();
         Task<int> ObtenerNroAsientosAsync();
     }

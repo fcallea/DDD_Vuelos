@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vuelos.Application.Services
-{
-    public interface IPistaService
-    {
+namespace Vuelos.Application.Services {
+    public interface IPistaService {
         Task<int> AsignarNroVueloAsync();
         Task<Guid> GetIdPistaAsync();
     }

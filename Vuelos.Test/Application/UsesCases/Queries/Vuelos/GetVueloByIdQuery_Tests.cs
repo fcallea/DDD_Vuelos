@@ -8,13 +8,10 @@ using Vuelos.Application.Dto.Vuelo;
 using Vuelos.Application.UseCases.Queries.Vuelos.GetVueloById;
 using Xunit;
 
-namespace Vuelos.Test.Application.UsesCases.Queries.Vuelos
-{
-    public class GetVueloByIdQuery_Tests
-    {
+namespace Vuelos.Test.Application.UsesCases.Queries.Vuelos {
+    public class GetVueloByIdQuery_Tests {
         [Fact]
-        public void GetVueloByIdQuery_DataValid()
-        {
+        public void GetVueloByIdQuery_DataValid() {
             Guid idLugarOrigen = Guid.NewGuid();
             Guid idLugarDestino = Guid.NewGuid();
             Guid idItinerario = Guid.NewGuid();
@@ -26,8 +23,7 @@ namespace Vuelos.Test.Application.UsesCases.Queries.Vuelos
             Guid id = Guid.NewGuid();
             int nroVuelo = 123;
             VueloDto vuelo =
-                new()
-                {
+                new() {
                     IdLugarOrigen = idLugarOrigen,
                     IdLugarDestino = idLugarDestino,
                     IdItinerario = idItinerario,
@@ -47,10 +43,9 @@ namespace Vuelos.Test.Application.UsesCases.Queries.Vuelos
 
 
         [Fact]
-        public void TestConstructor_IsPrivate()
-        {
+        public void TestConstructor_IsPrivate() {
             var command = (GetVueloByIdQuery)Activator.CreateInstance(typeof(GetVueloByIdQuery), true);
-            Assert.Null((object)command.Id);
+            Assert.NotNull((object)command.Id);
         }
     }
 }

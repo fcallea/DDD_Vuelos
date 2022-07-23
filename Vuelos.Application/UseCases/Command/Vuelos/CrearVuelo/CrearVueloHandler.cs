@@ -12,10 +12,8 @@ using Vuelos.Domain.Model.Vuelos;
 using Vuelos.Domain.Repositories;
 
 
-namespace Vuelos.Application.UseCases.Command.Vuelos.CrearVuelo
-{
-    public class CrearVueloHandler : IRequestHandler<CrearVueloCommand, Guid>
-    {
+namespace Vuelos.Application.UseCases.Command.Vuelos.CrearVuelo {
+    public class CrearVueloHandler : IRequestHandler<CrearVueloCommand, Guid> {
         private readonly IVueloRepository _vueloRepository;
         private readonly ILogger<CrearVueloHandler> _logger;
         private readonly IItinerarioService _itinerarioService;
@@ -32,8 +30,7 @@ namespace Vuelos.Application.UseCases.Command.Vuelos.CrearVuelo
             //, IVueloService ivueloService
             //, IVueloFactory vueloFactory
             , IUnitOfWork unitOfWork
-            )
-        {
+            ) {
             _logger = logger;
             _vueloRepository = vueloRepository;
             _itinerarioService = itinerarioService;
@@ -43,11 +40,9 @@ namespace Vuelos.Application.UseCases.Command.Vuelos.CrearVuelo
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<Guid> Handle(CrearVueloCommand request, CancellationToken cancellationToken)
-        {
+        public async Task<Guid> Handle(CrearVueloCommand request, CancellationToken cancellationToken) {
 
-            try
-            {
+            try {
 
                 //Guid idTripulacion = await _itripulacionService.CrearTripulacionAsync();
                 //Guid idLugarDestino = await _ivueloService.CrearLugarDestinoAsync();
@@ -94,8 +89,7 @@ namespace Vuelos.Application.UseCases.Command.Vuelos.CrearVuelo
                 await _unitOfWork.Commit();
 
                 return objVuelo.Id;
-            } catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 _logger.LogError(ex, "Error al crear vuelo");
             }
 

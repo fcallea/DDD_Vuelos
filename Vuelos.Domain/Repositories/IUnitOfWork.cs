@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vuelos.Domain.Repositories
-{
-    public interface IUnitOfWork
-    {
+namespace Vuelos.Domain.Repositories {
+    public interface IUnitOfWork {
         Task Commit();
     }
 }

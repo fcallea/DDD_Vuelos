@@ -5,10 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Vuelos.Domain.Model.Vuelos;
 
-namespace Vuelos.Domain.Factories
-{
-    public interface IVueloFactory
-    {
+namespace Vuelos.Domain.Factories {
+    public interface IVueloFactory {
         Vuelo Create(Guid IdLugarOrigen, Guid IdLugarDestino
             , Guid IdItinerario, Guid IdAeronave, int NroVuelo
             , Guid IdTripulacion

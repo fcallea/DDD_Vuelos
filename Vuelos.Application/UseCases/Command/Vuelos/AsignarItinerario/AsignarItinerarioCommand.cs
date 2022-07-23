@@ -6,14 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Vuelos.Application.Dto.Vuelo;
 
-namespace Vuelos.Application.UseCases.Command.Vuelos.AsignarItinerario
-{
-    public class AsignarItinerarioCommand : IRequest<Guid>
-    {
+namespace Vuelos.Application.UseCases.Command.Vuelos.AsignarItinerario {
+    public class AsignarItinerarioCommand : IRequest<Guid> {
         public ItinerarioDto Itinerario { get; set; }
         private AsignarItinerarioCommand() { }
-        public AsignarItinerarioCommand(ItinerarioDto itinerario)
-        {
+        public AsignarItinerarioCommand(ItinerarioDto itinerario) {
             Itinerario = itinerario;
         }
     }

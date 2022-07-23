@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vuelos.Test.Application
-{
-    public class MockFactory
-    {
+namespace Vuelos.Test.Application {
+    public class MockFactory {
         /*
         public static List<DetallePedidoDto> GetDetallePedido()
         {

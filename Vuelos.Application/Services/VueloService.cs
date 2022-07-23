@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vuelos.Application.Services
-{
-    public class VueloService : IVueloService
-    {
+namespace Vuelos.Application.Services {
+    public class VueloService : IVueloService {
         public Task<Guid> CrearLugarOrigenAsync() => Task.FromResult(Guid.NewGuid());
         public Task<Guid> CrearLugarDestinoAsync() => Task.FromResult(Guid.NewGuid());
         public Task<DateTime> CrearFechaHoraPartidaAsync() => Task.FromResult(DateTime.Now);

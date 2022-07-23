@@ -5,10 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Vuelos.Domain.ValueObjects;
 
-namespace Vuelos.Infraestructure.EF.ReadModel
-{
-    public class VueloReadModel
-    {
+namespace Vuelos.Infraestructure.EF.ReadModel {
+    public class VueloReadModel {
         public Guid IdVuelo { get; set; }
         public Guid IdLugarOrigen { get; set; }
         public LugarReadModel LugarDestino { get; set; }

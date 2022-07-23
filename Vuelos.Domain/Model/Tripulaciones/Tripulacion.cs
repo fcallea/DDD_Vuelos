@@ -6,22 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vuelos.Domain.Model.Tripulaciones
-{
-    public class Tripulacion : AggregateRoot<Guid>
-    {
+namespace Vuelos.Domain.Model.Tripulaciones {
+    public class Tripulacion : AggregateRoot<Guid> {
         public Guid TripulacionId { get; private set; }
         private readonly ICollection<Tripulacion> _Tripulantes;
-        public IReadOnlyCollection<Tripulacion> Tripulantes
-        {
-            get
-            {
+        public IReadOnlyCollection<Tripulacion> Tripulantes {
+            get {
                 return new ReadOnlyCollection<Tripulacion>(_Tripulantes.ToList());
             }
         }
 
-        public Tripulacion()
-        {
+        public Tripulacion() {
             _Tripulantes = new List<Tripulacion>();
         }
     }

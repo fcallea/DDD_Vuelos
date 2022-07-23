@@ -5,10 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Vuelos.Domain.Model.Itinerarios;
 
-namespace Vuelos.Domain.Factories
-{
-    public interface IItinerarioFactory
-    {
+namespace Vuelos.Domain.Factories {
+    public interface IItinerarioFactory {
         Itinerario Create(Guid IdPista, Guid IdAeronave, int NroVuelo, DateTime FechaHoraDesde, DateTime FechaHoraHasta);
         //Task CreateAsync(Itinerario objItinerario);
     }

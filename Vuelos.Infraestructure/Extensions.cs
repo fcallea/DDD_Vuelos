@@ -15,13 +15,10 @@ using Vuelos.Infraestructure.EF.Contexts;
 using Vuelos.Infraestructure.EF.Repository;
 using Vuelos.Infraestructure.MemoryRepository;
 
-namespace Vuelos.Infraestructure
-{
-    public static class Extensions
-    {
+namespace Vuelos.Infraestructure {
+    public static class Extensions {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services,
-            IConfiguration configuration)
-        {
+            IConfiguration configuration) {
 
             services.AddApplication();
             services.AddMediatR(Assembly.GetExecutingAssembly());

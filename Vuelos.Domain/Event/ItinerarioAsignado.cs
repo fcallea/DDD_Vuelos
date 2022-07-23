@@ -5,10 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vuelos.Domain.Event
-{
-    public record ItinerarioAsignado : DomainEvent
-    {
+namespace Vuelos.Domain.Event {
+    public record ItinerarioAsignado : DomainEvent {
         public Guid IdItinerario { get; }
         public Guid IdPista { get; }
         public Guid IdAeronave { get; }
@@ -19,8 +17,7 @@ namespace Vuelos.Domain.Event
 
         public ItinerarioAsignado(Guid IdItinerario, Guid IdPista
         , Guid IdAeronave, int NroVuelo
-        , DateTime FechaHoraDesde, DateTime FechaHoraHasta) : base(DateTime.Now)
-        {
+        , DateTime FechaHoraDesde, DateTime FechaHoraHasta) : base(DateTime.Now) {
             this.IdItinerario = IdItinerario;
             this.IdPista = IdPista;
             this.IdAeronave = IdAeronave;

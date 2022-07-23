@@ -7,13 +7,10 @@ using Vuelos.Application.Dto.Vuelo;
 using Vuelos.Application.UseCases.Command.Vuelos.CrearVuelo;
 using Xunit;
 
-namespace Vuelos.Test.Application.UsesCases.Command.Vuelos.CrearVuelo
-{
-    public class CrearVueloCommand_Test
-    {
+namespace Vuelos.Test.Application.UsesCases.Command.Vuelos.CrearVuelo {
+    public class CrearVueloCommand_Test {
         [Fact]
-        public void CrearVueloCommand_DataValid()
-        {
+        public void CrearVueloCommand_DataValid() {
             Guid idLugarOrigen = Guid.NewGuid();
             Guid idLugarDestino = Guid.NewGuid();
             Guid idItinerario = Guid.NewGuid();
@@ -25,8 +22,7 @@ namespace Vuelos.Test.Application.UsesCases.Command.Vuelos.CrearVuelo
             decimal millasVuelo = new decimal(20.1);
 
             VueloDto vuelo =
-                new()
-                {
+                new() {
                     IdLugarOrigen = idLugarOrigen
                     ,
                     IdLugarDestino = idLugarDestino
@@ -65,8 +61,7 @@ namespace Vuelos.Test.Application.UsesCases.Command.Vuelos.CrearVuelo
 
 
         [Fact]
-        public void TestConstructor_IsPrivate()
-        {
+        public void TestConstructor_IsPrivate() {
             var command = (CrearVueloCommand)Activator.CreateInstance(typeof(CrearVueloCommand), true);
             Assert.Null(command.Vuelo);
         }

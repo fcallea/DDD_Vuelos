@@ -8,25 +8,20 @@ using Vuelos.Domain.Model.Itinerarios;
 using Vuelos.Domain.Repositories;
 using Vuelos.Infraestructure.EF.Contexts;
 
-namespace Vuelos.Infraestructure.EF.Repository
-{
-    public class ItinerarioRepository : IItinerarioRepository
-    {
+namespace Vuelos.Infraestructure.EF.Repository {
+    public class ItinerarioRepository : IItinerarioRepository {
 
-        public Task CreateAsync(Itinerario obj)
-        {
+        public Task CreateAsync(Itinerario obj) {
             Console.WriteLine($"INSERTANDO EL itinerario {obj.NroVuelo}");
             return Task.CompletedTask;
         }
 
-        public Task<Itinerario> FindByIdAsync(Guid id)
-        {
+        public Task<Itinerario> FindByIdAsync(Guid id) {
             Console.WriteLine($"BUSCANDO POR EL VUELO {id}");
             return null;
         }
 
-        public Task UpdateAsync(Itinerario obj)
-        {
+        public Task UpdateAsync(Itinerario obj) {
             Console.WriteLine($"ACTUALIZANDO EL VUELO {obj.NroVuelo}");
             return Task.CompletedTask;
         }
