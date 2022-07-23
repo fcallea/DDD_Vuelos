@@ -11,7 +11,6 @@ namespace Vuelos.Application.Dto.Vuelo {
         public DateTime FechaHoraDesde { get; set; }
         public DateTime FechaHoraHasta { get; set; }
 
-        public int estado { get; set; }
 
     }
 }
