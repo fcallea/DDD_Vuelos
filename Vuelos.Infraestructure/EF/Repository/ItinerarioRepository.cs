@@ -18,7 +18,7 @@ namespace Vuelos.Infraestructure.EF.Repository {
 
         public Task<Itinerario> FindByIdAsync(Guid id) {
             Console.WriteLine($"BUSCANDO POR EL VUELO {id}");
-            return null;
+            return Task.CompletedTask;
         }
 
         public Task UpdateAsync(Itinerario obj) {
