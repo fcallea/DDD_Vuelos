@@ -60,3 +60,7 @@ jobs:
         dotnet test --no-build --verbosity normal    
         dotnet-coverage collect 'dotnet test Vuelos.Test' -f xml  -o 'coverage.xml'        
         .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
