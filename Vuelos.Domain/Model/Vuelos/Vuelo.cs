@@ -39,6 +39,7 @@ namespace Vuelos.Domain.Model.Vuelos {
             }
         }
 
+
         private Vuelo() { }
 
         public Vuelo(
