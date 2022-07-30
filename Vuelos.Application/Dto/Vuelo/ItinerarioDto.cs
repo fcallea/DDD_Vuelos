@@ -10,7 +10,5 @@ namespace Vuelos.Application.Dto.Vuelo {
         public Guid IdAeronave { get; set; }
         public DateTime FechaHoraDesde { get; set; }
         public DateTime FechaHoraHasta { get; set; }
-
-
     }
 }
