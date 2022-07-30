@@ -10,8 +10,6 @@ namespace Vuelos.Domain.Model.Vuelos {
         public Guid IdTripulante { get; private set; }
         public Guid IdCargo { get; private set; }
 
-        public Guid IdCargo2 { get; private set; }
-
         internal TripulanteDeVuelo(Guid IdTripulante, Guid IdCargo) {
             Id = Guid.NewGuid();
             this.IdTripulante = IdTripulante;
