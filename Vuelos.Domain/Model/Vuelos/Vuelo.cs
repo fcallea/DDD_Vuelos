@@ -22,7 +22,7 @@ namespace Vuelos.Domain.Model.Vuelos {
         public decimal MillasVuelo { get; private set; }
         public decimal TiempoVuelo { get; private set; }
         public int StockAsientos { get; private set; }
-
+        public int StockAsientos2 { get; private set; }
         public Guid IdTripulacion { get; private set; }
 
         private readonly ICollection<TripulanteDeVuelo> _Tripulacion;
