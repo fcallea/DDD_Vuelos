@@ -23,6 +23,7 @@ namespace Vuelos.Domain.Model.Vuelos {
         public decimal TiempoVuelo { get; private set; }
         public int StockAsientos { get; private set; }
 
+
         public Guid IdTripulacion { get; private set; }
 
         private readonly ICollection<TripulanteDeVuelo> _Tripulacion;
@@ -38,7 +39,6 @@ namespace Vuelos.Domain.Model.Vuelos {
                 return new ReadOnlyCollection<ReservaDeVuelo>(_Reserva.ToList());
             }
         }
-
 
         private Vuelo() { }
 
