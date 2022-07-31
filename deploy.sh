@@ -5,7 +5,8 @@
 #docker-compose down
 git fetch
 git stash
-git reset --hard origin/main
+#git reset --hard origin/main
+git pull
 git stash pop
 #docker-compose up -d
 dotnet publish
